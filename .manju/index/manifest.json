@@ -1,0 +1,100 @@
+{
+  "files": {
+    "src/reap/viz/overlay.py": {
+      "hash": "2d4e8792d075c1f851de2a3c65b2e35bbe33bce5c4730c51599ec9bc577d4933",
+      "chunks": 1,
+      "role": "source"
+    },
+    "src/reap/apps/bench_pose.py": {
+      "hash": "d345e3f4ebf3aa9c56f504b12489141f2e0c6522600025c34a46375305f6e694",
+      "chunks": 3,
+      "role": "source"
+    },
+    "tests/test_hybrid_logic.py": {
+      "hash": "8f519b030d94d3c1cff42696ed1be8c42da863ee7067c6482bade261c53a9e3b",
+      "chunks": 7,
+      "role": "tests"
+    },
+    "configs/default.yaml": {
+      "hash": "82da43a1a4f86c9ea893dfac3117c7b43ddf19f773d87b7288842543c9c5b149",
+      "chunks": 1,
+      "role": "source"
+    },
+    "pyproject.toml": {
+      "hash": "f30a62511ebd7c35c256a2b28083bab514b975839afe2b27161a665222c56d50",
+      "chunks": 1,
+      "role": "project config"
+    },
+    "README.md": {
+      "hash": "a3690a9d52ac2eeebd88ab2441401f887f65ecb237238a04361d1c88f0a6fe5b",
+      "chunks": 1,
+      "role": "documentation"
+    },
+    "scripts/download_weights.py": {
+      "hash": "cc778967afaa45f16055e3eeb9f9e1520db11c0c699bbd1f6ab9246b9b605e72",
+      "chunks": 1,
+      "role": "source"
+    },
+    "src/reap/__init__.py": {
+      "hash": "a030a9cc66485fab40363e92cfcac0b3e670b0bf2d683304bffa10df3f31df91",
+      "chunks": 1,
+      "role": "source"
+    },
+    "src/reap/__main__.py": {
+      "hash": "4d3c7acf62ceecc78735a0a19a377df6609bdb309d3b41490c8d83f418276a77",
+      "chunks": 1,
+      "role": "source"
+    },
+    "src/reap/kinematics/angles.py": {
+      "hash": "308a11ef15556539e224e983f524598dd8075b627b3ec02eb838c960867e4535",
+      "chunks": 2,
+      "role": "source"
+    },
+    "src/reap/pose/base.py": {
+      "hash": "fe46b93a8a99d382e3400358940309eeb925dc1ee6d6ba692b9d2aca0bb2d325",
+      "chunks": 3,
+      "role": "source"
+    },
+    "src/reap/pose/filters.py": {
+      "hash": "a5f661536e714b45f672d4513a8b24c8efef7de6cad442ebe67bd81dcd56de89",
+      "chunks": 7,
+      "role": "source"
+    },
+    "src/reap/pose/hybrid.py": {
+      "hash": "6bf05e71152db47a1304ded88b49e0f935e6befd3ddcaf0a4afab9eb71ad4657",
+      "chunks": 7,
+      "role": "source"
+    },
+    "src/reap/pose/mappings.py": {
+      "hash": "7e9028ba80f91fec82d386946afaa0f2279f14cc6faad80750d92f568848c2a2",
+      "chunks": 1,
+      "role": "source"
+    },
+    "src/reap/pose/mediapipe_backend.py": {
+      "hash": "c73332ec35af1898f1b1210fab5cfe59725ef5ec2ae01582e442e3e9d5f1576b",
+      "chunks": 5,
+      "role": "source"
+    },
+    "src/reap/pose/yolo_backend.py": {
+      "hash": "9cd70d5d26fb061a9a4411a21b1f53bcab3fb45d580882c18dfb2794b65f3b1b",
+      "chunks": 4,
+      "role": "source"
+    },
+    "src/reap/schemas.py": {
+      "hash": "c55c89a17adacd9892f880623a7d151da1e402927f7df1bc9311850d7cfa603a",
+      "chunks": 5,
+      "role": "source"
+    },
+    "tests/test_mappings.py": {
+      "hash": "fb779c88e9e76574e077150eb9a1b0f3fd5d2832ae4b040b25578ff28ca25c21",
+      "chunks": 3,
+      "role": "tests"
+    },
+    "scripts/make_status_pdf.py": {
+      "hash": "482262e4c47732fca994e1d72cdeff0a7b965699a205284cff65dbdcaa5062c3",
+      "chunks": 2,
+      "role": "source"
+    }
+  },
+  "file_count": 18
+}

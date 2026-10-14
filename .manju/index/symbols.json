@@ -1,0 +1,378 @@
+{
+  "files": {
+    "src/reap/kinematics/angles.py": [
+      {
+        "name": "angle_at",
+        "kind": "function",
+        "start": 7,
+        "end": 15
+      },
+      {
+        "name": "pose_angles",
+        "kind": "function",
+        "start": 18,
+        "end": 28
+      }
+    ],
+    "src/reap/viz/overlay.py": [
+      {
+        "name": "draw_pose",
+        "kind": "function",
+        "start": 11,
+        "end": 32
+      }
+    ],
+    "scripts/download_weights.py": [
+      {
+        "name": "download_weights",
+        "kind": "block",
+        "start": 1,
+        "end": 15
+      }
+    ],
+    "src/reap/__main__.py": [
+      {
+        "name": "__main__",
+        "kind": "block",
+        "start": 1,
+        "end": 5
+      }
+    ],
+    "src/reap/apps/bench_pose.py": [
+      {
+        "name": "load_config",
+        "kind": "function",
+        "start": 20,
+        "end": 25
+      },
+      {
+        "name": "parse_source",
+        "kind": "function",
+        "start": 28,
+        "end": 29
+      },
+      {
+        "name": "main",
+        "kind": "function",
+        "start": 32,
+        "end": 104
+      }
+    ],
+    "tests/test_mappings.py": [
+      {
+        "name": "test_right_angle",
+        "kind": "function",
+        "start": 7,
+        "end": 11
+      },
+      {
+        "name": "test_straight_leg",
+        "kind": "function",
+        "start": 14,
+        "end": 20
+      },
+      {
+        "name": "test_mapping_covers_all_coco",
+        "kind": "function",
+        "start": 23,
+        "end": 25
+      }
+    ],
+    "README.md": [
+      {
+        "name": "README",
+        "kind": "block",
+        "start": 1,
+        "end": 24
+      }
+    ],
+    "tests/test_hybrid_logic.py": [
+      {
+        "name": "_pose",
+        "kind": "function",
+        "start": 8,
+        "end": 11
+      },
+      {
+        "name": "test_fuse_prefers_confident_backend",
+        "kind": "function",
+        "start": 14,
+        "end": 21
+      },
+      {
+        "name": "test_fuse_takes_only_visible_side",
+        "kind": "function",
+        "start": 24,
+        "end": 28
+      },
+      {
+        "name": "test_hybrid_mp_only_mode_never_touches_yolo",
+        "kind": "function",
+        "start": 31,
+        "end": 42
+      },
+      {
+        "name": "FakeMP",
+        "kind": "class",
+        "start": 35,
+        "end": 38
+      },
+      {
+        "name": "process",
+        "kind": "function",
+        "start": 36,
+        "end": 37
+      },
+      {
+        "name": "close",
+        "kind": "function",
+        "start": 38,
+        "end": 38
+      }
+    ],
+    "configs/default.yaml": [
+      {
+        "name": "default",
+        "kind": "block",
+        "start": 1,
+        "end": 26
+      }
+    ],
+    "pyproject.toml": [
+      {
+        "name": "pyproject",
+        "kind": "block",
+        "start": 1,
+        "end": 32
+      }
+    ],
+    "src/reap/__init__.py": [
+      {
+        "name": "__init__",
+        "kind": "block",
+        "start": 1,
+        "end": 5
+      }
+    ],
+    "src/reap/pose/base.py": [
+      {
+        "name": "PoseBackend",
+        "kind": "class",
+        "start": 11,
+        "end": 15
+      },
+      {
+        "name": "process",
+        "kind": "function",
+        "start": 14,
+        "end": 14
+      },
+      {
+        "name": "close",
+        "kind": "function",
+        "start": 15,
+        "end": 15
+      }
+    ],
+    "src/reap/pose/filters.py": [
+      {
+        "name": "OneEuroFilter",
+        "kind": "class",
+        "start": 15,
+        "end": 47
+      },
+      {
+        "name": "__init__",
+        "kind": "function",
+        "start": 16,
+        "end": 24
+      },
+      {
+        "name": "_alpha",
+        "kind": "function",
+        "start": 27,
+        "end": 30
+      },
+      {
+        "name": "__call__",
+        "kind": "function",
+        "start": 32,
+        "end": 47
+      },
+      {
+        "name": "NEuroPredictor",
+        "kind": "class",
+        "start": 50,
+        "end": 67
+      },
+      {
+        "name": "__init__",
+        "kind": "function",
+        "start": 58,
+        "end": 59
+      },
+      {
+        "name": "__call__",
+        "kind": "function",
+        "start": 61,
+        "end": 67
+      }
+    ],
+    "src/reap/pose/hybrid.py": [
+      {
+        "name": "fuse_confidence_weighted",
+        "kind": "function",
+        "start": 18,
+        "end": 32
+      },
+      {
+        "name": "HybridPose",
+        "kind": "class",
+        "start": 35,
+        "end": 87
+      },
+      {
+        "name": "__init__",
+        "kind": "function",
+        "start": 36,
+        "end": 47
+      },
+      {
+        "name": "_mp_backend",
+        "kind": "function",
+        "start": 49,
+        "end": 52
+      },
+      {
+        "name": "_yolo_backend",
+        "kind": "function",
+        "start": 54,
+        "end": 57
+      },
+      {
+        "name": "process",
+        "kind": "function",
+        "start": 59,
+        "end": 81
+      },
+      {
+        "name": "close",
+        "kind": "function",
+        "start": 83,
+        "end": 87
+      }
+    ],
+    "src/reap/pose/mappings.py": [
+      {
+        "name": "mappings",
+        "kind": "block",
+        "start": 1,
+        "end": 29
+      }
+    ],
+    "src/reap/pose/mediapipe_backend.py": [
+      {
+        "name": "_ensure_bundle",
+        "kind": "function",
+        "start": 24,
+        "end": 32
+      },
+      {
+        "name": "MediaPipeBackend",
+        "kind": "class",
+        "start": 35,
+        "end": 89
+      },
+      {
+        "name": "__init__",
+        "kind": "function",
+        "start": 38,
+        "end": 58
+      },
+      {
+        "name": "process",
+        "kind": "function",
+        "start": 60,
+        "end": 86
+      },
+      {
+        "name": "close",
+        "kind": "function",
+        "start": 88,
+        "end": 89
+      }
+    ],
+    "src/reap/pose/yolo_backend.py": [
+      {
+        "name": "YoloBackend",
+        "kind": "class",
+        "start": 11,
+        "end": 50
+      },
+      {
+        "name": "__init__",
+        "kind": "function",
+        "start": 14,
+        "end": 22
+      },
+      {
+        "name": "process",
+        "kind": "function",
+        "start": 24,
+        "end": 47
+      },
+      {
+        "name": "close",
+        "kind": "function",
+        "start": 49,
+        "end": 50
+      }
+    ],
+    "src/reap/schemas.py": [
+      {
+        "name": "PoseResult",
+        "kind": "class",
+        "start": 25,
+        "end": 45
+      },
+      {
+        "name": "present",
+        "kind": "function",
+        "start": 33,
+        "end": 34
+      },
+      {
+        "name": "avg_conf",
+        "kind": "function",
+        "start": 37,
+        "end": 39
+      },
+      {
+        "name": "pixel",
+        "kind": "function",
+        "start": 41,
+        "end": 45
+      },
+      {
+        "name": "empty_pose",
+        "kind": "function",
+        "start": 48,
+        "end": 54
+      }
+    ],
+    "scripts/make_status_pdf.py": [
+      {
+        "name": "draw_slide",
+        "kind": "function",
+        "start": 57,
+        "end": 99
+      },
+      {
+        "name": "main",
+        "kind": "function",
+        "start": 102,
+        "end": 108
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+# REAP default config — Sept milestone: Tracking Model Integration
+camera:
+  source: 0            # 0 = webcam, or path to video.mp4
+  width: 640
+  height: 480
+
+mediapipe:
+  model_complexity: 1  # 0=fast, 1=balanced, 2=accurate
+  min_detection_confidence: 0.5
+  min_tracking_confidence: 0.5
+
+yolo:
+  weights: "yolov8n-pose.pt"
+  imgsz: 640
+  conf: 0.5
+  device: "cpu"        # set "cuda" / "0" on GPU edge boards later
+
+hybrid:
+  mode: "hybrid"       # mp | yolo | hybrid
+  mp_conf_threshold: 0.5   # below this avg conf -> force YOLO fallback
+  validate_every_n: 15     # run YOLO as validator every N frames
+  fusion: "confidence_weighted"
+
+bench:
+  save_csv: ""         # e.g. "run.csv" to log per-frame latency
+  show_angles: true

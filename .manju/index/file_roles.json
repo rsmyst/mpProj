@@ -1,0 +1,23 @@
+{
+  "files": {
+    "src/reap/kinematics/angles.py": "source",
+    "src/reap/viz/overlay.py": "source",
+    "scripts/download_weights.py": "source",
+    "src/reap/__main__.py": "source",
+    "src/reap/apps/bench_pose.py": "source",
+    "tests/test_mappings.py": "tests",
+    "README.md": "documentation",
+    "tests/test_hybrid_logic.py": "tests",
+    "configs/default.yaml": "source",
+    "pyproject.toml": "project config",
+    "src/reap/__init__.py": "source",
+    "src/reap/pose/base.py": "source",
+    "src/reap/pose/filters.py": "source",
+    "src/reap/pose/hybrid.py": "source",
+    "src/reap/pose/mappings.py": "source",
+    "src/reap/pose/mediapipe_backend.py": "source",
+    "src/reap/pose/yolo_backend.py": "source",
+    "src/reap/schemas.py": "source",
+    "scripts/make_status_pdf.py": "source"
+  }
+}
