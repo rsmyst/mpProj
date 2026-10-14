@@ -1,0 +1,17 @@
+%% Lightweight on-device mode — November starter explained simply
+flowchart LR
+    F["New camera\nframe arrives"] --> K{"Process\nthis frame?"}
+    K -- "No, skip\nto save battery" --> W["Wait for\nnext frame"]
+    W --> F
+    K -- "Yes" --> S["Shrink picture\n+ track joints"]
+    S --> T["Stopwatch:\nhow long did\nthat take?"]
+    T --> V{"Too slow for\nsmooth coaching?"}
+    V -- "Yes" --> L["Suggest lite mode:\nsmaller picture,\nevery other frame"]
+    V -- "No" --> O["Keep current\nsettings"]
+    style F fill:#dbeafe,stroke:#1d4ed8,stroke-width:3px,font-size:20px
+    style K fill:#fef9c3,stroke:#a16207,stroke-width:3px,font-size:20px
+    style S fill:#dbeafe,stroke:#1d4ed8,stroke-width:3px,font-size:20px
+    style T fill:#ede9fe,stroke:#6d28d9,stroke-width:3px,font-size:20px
+    style V fill:#fef9c3,stroke:#a16207,stroke-width:3px,font-size:20px
+    style L fill:#ffedd5,stroke:#c2410c,stroke-width:3px,font-size:20px
+    style O fill:#dcfce7,stroke:#15803d,stroke-width:3px,font-size:20px

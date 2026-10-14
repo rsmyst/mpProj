@@ -24,3 +24,18 @@ hybrid:
 bench:
   save_csv: ""         # e.g. "run.csv" to log per-frame latency
   show_angles: true
+
+# Oct milestone (done): Core Framework — guided workout session
+session:
+  exercise: "chair_stand"  # chair_stand | squat | leg_raise
+  min_amplitude: 20.0      # smallest bend (deg) that counts as a rep
+  min_gap: 10              # min frames between reps
+  stand_threshold: 150.0   # knee angle above this = standing upright
+
+# Nov milestone (starter ~30%): Edge AI Setup — lightweight on-device mode
+edge:
+  profile: "balanced"      # balanced | low_power
+  low_power_width: 320
+  low_power_height: 240
+  run_every_n: 1           # 2 = process every other frame on slow devices
+  budget_ms: 100.0         # warn if a frame takes longer than this

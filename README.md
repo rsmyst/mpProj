@@ -16,8 +16,11 @@ Video file instead of webcam: `uv run reap-bench --source clip.mp4 --save-csv ru
 - `src/reap/schemas.py` — canonical COCO-17 `PoseResult`
 - `src/reap/pose/` — `mediapipe_backend`, `yolo_backend`, `hybrid` fusion, `filters` (OneEuro now, N-euro stub)
 - `src/reap/kinematics/angles.py` — knee/hip/elbow angles
+- `src/reap/framework/` — Oct milestone: exercise guides, rep tracker, guided session
+- `src/reap/edge/` — Nov starter (~30%): lite profile, frame policy, latency log
 - `src/reap/apps/bench_pose.py` — side-by-side benchmark visualizer
 - `configs/default.yaml` — thresholds, model sizes, camera
+- `present/` — progress-update deck sources (LaTeX + mermaid diagrams)
 
 ## Pipeline (per Architecture slide)
 `Camera → HybridPose(MP+YOLO) → Predictive Kinematics → ST-GCN → Fatigue → Audio Engine`

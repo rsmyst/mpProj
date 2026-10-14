@@ -1,0 +1,11 @@
+%% One rep, step by step — what happens in under a second
+sequenceDiagram
+    participant You as You exercising
+    participant Cam as Camera
+    participant App as Workout buddy
+    participant Voice as Spoken cue
+    You->>Cam: Bend knees, then stand
+    Cam->>App: Joint angles, every frame
+    App->>App: Count the bend, check safe range
+    App->>Voice: Speak the result aloud
+    Voice->>You: Good rep! / Bend deeper

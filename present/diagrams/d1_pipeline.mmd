@@ -1,0 +1,12 @@
+%% Pipeline — how the whole buddy works (plain words, no file names)
+flowchart LR
+    A["Phone / Webcam\nsees you exercise"] --> B["Body tracking\nfinds your joints"]
+    B --> C["Workout guide\ncounts reps &\nchecks your form"]
+    C --> D["Lightweight mode\nkeeps it fast\non the device"]
+    D --> E["Spoken cues\n'Good rep' /\n'Bend a little deeper'"]
+    E -.-> A
+    style A fill:#dbeafe,stroke:#1d4ed8,stroke-width:3px,font-size:20px
+    style B fill:#dbeafe,stroke:#1d4ed8,stroke-width:3px,font-size:20px
+    style C fill:#dcfce7,stroke:#15803d,stroke-width:4px,font-size:20px
+    style D fill:#fef9c3,stroke:#a16207,stroke-width:3px,font-size:20px
+    style E fill:#ede9fe,stroke:#6d28d9,stroke-width:3px,font-size:20px

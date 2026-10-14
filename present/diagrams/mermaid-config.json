@@ -1,0 +1,12 @@
+{
+  "theme": "neutral",
+  "themeVariables": {
+    "fontSize": "22px",
+    "fontFamily": "DejaVu Sans, Verdana, sans-serif",
+    "lineColor": "#334155",
+    "primaryBorderColor": "#1d4ed8"
+  },
+  "flowchart": { "curve": "rounded", "htmlLabels": true },
+  "pie": { "textPosition": 0.6 },
+  "sequence": { "mirrorActors": false }
+}

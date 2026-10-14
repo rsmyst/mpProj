@@ -1,0 +1,18 @@
+%% Guided session loop — October work explained simply
+flowchart TB
+    S["Start set:\nChair Stand"] --> U["Standing\nupright"]
+    U --> B["Bending down...\nwatching knee angle"]
+    B --> D{"Deep enough\nbut not too deep?"}
+    D -- "Yes, in healthy range" --> G["Count it:\n'Good rep!'"]
+    D -- "Too shallow" --> S1["Cue:\n'Bend a little deeper'"]
+    D -- "Too deep" --> S2["Cue:\n'Ease up, protect knees'"]
+    G --> U
+    S1 --> U
+    S2 --> U
+    style S fill:#1d4ed8,color:#fff,stroke-width:0,font-size:22px
+    style U fill:#dbeafe,stroke:#1d4ed8,stroke-width:3px,font-size:20px
+    style B fill:#dbeafe,stroke:#1d4ed8,stroke-width:3px,font-size:20px
+    style D fill:#fef9c3,stroke:#a16207,stroke-width:3px,font-size:20px
+    style G fill:#dcfce7,stroke:#15803d,stroke-width:4px,font-size:20px
+    style S1 fill:#ffedd5,stroke:#c2410c,stroke-width:3px,font-size:20px
+    style S2 fill:#ffedd5,stroke:#c2410c,stroke-width:3px,font-size:20px
