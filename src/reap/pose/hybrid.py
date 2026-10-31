@@ -46,6 +46,11 @@ class HybridPose:
         self._yolo_kwargs = yolo_kwargs or {}
         self._last_yolo: PoseResult | None = None
 
+    def set_mode(self, mode: str) -> None:
+        if mode not in ("mp", "yolo", "hybrid"):
+            raise ValueError(f"unknown pose mode {mode!r}")
+        self.mode = mode
+
     def _mp_backend(self) -> MediaPipeBackend:
         if self._mp is None:
             self._mp = MediaPipeBackend(**self._mp_kwargs)

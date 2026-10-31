@@ -1,8 +1,10 @@
 # REAP default config — Sept milestone: Tracking Model Integration
 camera:
-  source: 0            # 0 = webcam, or path to video.mp4
+  source: 0            # 0 = webcam, or path to video.mp4 / rtsp://...
   width: 640
   height: 480
+  mirror: false        # true = selfie view
+  loop: false          # loop video files
 
 mediapipe:
   model_complexity: 1  # 0=fast, 1=balanced, 2=accurate
@@ -39,3 +41,25 @@ edge:
   low_power_height: 240
   run_every_n: 1           # 2 = process every other frame on slow devices
   budget_ms: 100.0         # warn if a frame takes longer than this
+
+# Local voice I/O — zero cloud at runtime once weights are cached
+audio:
+  tts: "auto"              # auto | phonon | piper | espeak | none
+  phonon_model: "hf://gradium/phonon-31m-en"
+  phonon_voice: "Pippa"    # British female; empty = model's own default
+  phonon_lang: "en"
+  phonon_quant: "q8"       # q8 (~65 MB) | q6k | q4k | f32
+  phonon_device: "cpu"     # cpu
+  phonon_voice_catalog: "" # optional custom catalog; empty = Gradium default
+  piper_model: ""          # fallback Piper voice, e.g. "models/en_US-amy-low.onnx"
+  espeak_voice: "en"
+  espeak_speed: 165
+  cue_gap_s: 1.2           # do not repeat corrective cues faster than this
+  auto_cues: false         # demo speaks only when a button is clicked
+
+# Live demo server
+demo:
+  host: "127.0.0.1"
+  port: 8000
+  stick_only: false        # true = black background, skeleton only
+  jpeg_quality: 80

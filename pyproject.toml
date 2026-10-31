@@ -12,8 +12,18 @@ dependencies = [
   "pyyaml>=6.0",
 ]
 
+[project.optional-dependencies]
+# Local neural TTS: Phonon-31M (Gradium) plus Piper fallback.
+# The demo still works without this extra by falling back to espeak-ng.
+voice = [
+  "ptts>=0.6",
+  "piper-tts>=1.8",
+]
+
 [project.scripts]
 reap-bench = "reap.apps.bench_pose:main"
+reap-demo = "reap.apps.demo_server:main"
+reap-speak = "reap.audio.tts:main"
 
 [dependency-groups]
 dev = ["pytest>=8.0"]

@@ -29,6 +29,11 @@ class OneEuroFilter:
         tau = 1.0 / (2 * math.pi * cutoff)
         return 1.0 / (1.0 + tau / te)
 
+    def reset(self) -> None:
+        self._x_prev = None
+        self._dx_prev = None
+        self._t_prev = None
+
     def __call__(self, x: np.ndarray, t: float) -> np.ndarray:
         if self._x_prev is None:
             self._x_prev = x.copy()

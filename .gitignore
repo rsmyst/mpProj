@@ -5,4 +5,7 @@ __pycache__/
 *.pt
 runs/
 *.csv
+models/
+*.onnx
+*.onnx.json
 .DS_Store
