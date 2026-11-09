@@ -1,0 +1,1183 @@
+\documentclass[12pt]{report}
+
+% ==============================================================================
+% PACKAGES (Strictly matching NITK report_template specification)
+% ==============================================================================
+\usepackage{pdfpages}
+\usepackage{lscape}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=black,
+    breaklinks=true,
+    plainpages=false,
+    pdfpagelabels=true
+}
+\usepackage[nottoc,notlof,notlot]{tocbibind}
+\usepackage{framed}
+\usepackage{rotfloat}
+\usepackage{subfig}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[english]{babel}
+\usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,shapes.geometric,positioning,calc,fit,backgrounds}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{pbox}
+\usepackage{url}
+\usepackage{array}
+\usepackage{fancyvrb}
+\usepackage{listings}
+\usepackage{ragged2e}
+\usepackage{sectsty}
+\usepackage{comment}
+\usepackage{soul}
+\usepackage{enumitem}
+\usepackage{chngcntr}
+\usepackage{cancel}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\definecolor{amber}{RGB}{217,119,6}
+\emergencystretch=3em
+\usepackage[toc,page]{appendix}
+\usepackage{setspace}
+\usepackage{afterpage}
+\usepackage{titlesec}
+\usepackage[linesnumbered,ruled,vlined,algochapter]{algorithm2e}
+\SetAlFnt{\footnotesize}
+
+% ==============================================================================
+% PAGE GEOMETRY & FORMATTING (NITK Standard from Main-File.tex)
+% ==============================================================================
+\textwidth 161mm
+\textheight 210mm
+\linespread{1}
+\chapterfont{\centering}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\renewcommand{\baselinestretch}{1.3}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries\centering}
+  {\chaptertitlename\ \thechapter}
+  {10pt}
+  {\Huge\centering}
+\titlespacing*{\chapter}{0pt}{-50pt}{5pt}
+
+\usepackage[
+  top    = 1.5in,
+  bottom = 1.0in,
+  left   = 1.5in,
+  right  = 1.0in
+]{geometry}
+
+\makeatletter
+\renewcommand*\l@table{\@dottedtocline{1}{1.5em}{3.4em}}
+\renewcommand*\l@figure{\@dottedtocline{1}{1.5em}{3.4em}}
+\makeatother
+
+\providecommand{\keywords}[1]{\textbf{\textit{Keywords---}} #1}
+
+% ==============================================================================
+% DOCUMENT BEGINS
+% ==============================================================================
+\hypersetup{pageanchor=false}
+\begin{document}
+\counterwithin{table}{chapter}
+\counterwithin{figure}{chapter}
+\thispagestyle{empty}
+
+% ------------------------------------------------------------------------------
+% 1. COVER PAGE (Matching Coverpage.tex format, calibrated to exactly 1 page)
+% ------------------------------------------------------------------------------
+\begin{center}
+    Major Project Report on\\[0.3em]
+    \textbf{\large \textbf{R.E.A.P : REALTIME EDGE AGENTIC PHYSIO-BUDDY}}\\[0.2em]
+    \textit{\normalsize A Sub-Second Kinematic Form Correction and Injury Prevention System}\\[0.8em]
+    
+    Submitted in partial fulfillment of the requirements for the degree of\\[0.3em]
+    BACHELOR OF TECHNOLOGY\\
+    in\\
+    INFORMATION TECHNOLOGY\\[0.6em]
+    by \\[0.3em]
+    \textbf{Mr. Shishir SH (231IT067)}\\
+    \textbf{Mr. Rahul S (231IT054)}\\
+    \textbf{Mr. Ashab M (231IT011)}\\[0.6em]
+    \large{\textit{under the guidance of}} \\[0.3em]
+    \large{\textbf{Prof. Ram Mohana Reddy Guddeti}}\\
+    Professor (HAG Scale)\\[0.4em]
+    \begin{figure}[H]
+        \centering
+        \IfFileExists{symbol.jpg}{%
+            \includegraphics[width=4.6cm, height=4.6cm, keepaspectratio]{symbol.jpg}%
+        }{%
+            \begin{tikzpicture}
+                \draw[line width=1.5pt, draw=blue!80!black, fill=blue!4] (0,0) rectangle (4.0,4.0);
+                \node[font=\bfseries\small, text=blue!80!black, align=center] at (2.0,2.2) {NITK EMBLEM\\[0.3em] SURATHKAL};
+                \node[font=\scriptsize\itshape, text=gray, align=center] at (2.0,1.2) {(symbol.jpg)};
+            \end{tikzpicture}%
+        }
+    \end{figure}
+    \vspace{-0.6em}
+    DEPARTMENT OF INFORMATION TECHNOLOGY\\
+    NATIONAL INSTITUTE OF TECHNOLOGY KARNATAKA\\
+    SURATHKAL, MANGALORE -- 575025\\
+    NOVEMBER, 2026
+\end{center}
+\clearpage
+\thispagestyle{empty}
+
+% ------------------------------------------------------------------------------
+% 2. DECLARATION (Matching Declaration.tex format, calibrated to 1 page)
+% ------------------------------------------------------------------------------
+\begin{framed}
+    \begin{center}
+        \textbf{{\Large DECLARATION}}
+    \end{center}
+    \vspace{0.8em}
+    I/We hereby \textit{declare} that the Project Work Report entitled \textit{\textbf{"R.E.A.P : Realtime Edge Agentic Physio-Buddy"}}, which is being submitted to the \textbf{National Institute of Technology Karnataka, Surathkal}, for the award of the Degree of Bachelor of Technology in Information Technology, is a \textit{bonafide report of the work carried out by me/us.} The material contained in this Project Report has not been submitted to any University or Institution for the award of any degree.
+    \vspace{1.5em}
+
+    \textit{Name of the Student (Registration Number) with Signature}
+    \begin{enumerate}[label={(\arabic*)}]
+        \setlength{\itemsep}{0.8em}
+        \item Mr. Shishir SH (231IT067) \hfill \rule{4.5cm}{0.4pt}
+        \item Mr. Rahul S (231IT054) \hfill \rule{4.5cm}{0.4pt}
+        \item Mr. Ashab M (231IT011) \hfill \rule{4.5cm}{0.4pt}
+    \end{enumerate}
+    \vspace{2.2em}
+
+    Department of Information Technology \\
+    Place: NITK, Surathkal-575025 \\
+    Date: 04/11/2026
+    \vspace{1.8em}
+\end{framed}
+\clearpage
+
+% ------------------------------------------------------------------------------
+% 3. CERTIFICATE (Matching Certificate.tex format, calibrated to 1 page)
+% ------------------------------------------------------------------------------
+\begin{framed}
+    \begin{center}
+        \textbf{{\Large CERTIFICATE}}
+    \end{center}
+    \vspace{0.6em}
+    This is to \textit{certify} that the Project Work Report entitled \textit{\textbf{"R.E.A.P : Realtime Edge Agentic Physio-Buddy"}} submitted by \\
+    \vspace{0.3em}
+    \textit{Name of the Student (Registration Number)}
+    \begin{enumerate}[label={(\arabic*)}]
+        \setlength{\itemsep}{0.2em}
+        \item Mr. Shishir SH (231IT067)
+        \item Mr. Rahul S (231IT054)
+        \item Mr. Ashab M (231IT011)
+    \end{enumerate}
+    as the record of the work carried out by them, is \textit{accepted as the B.Tech. Project work report submission} in partial fulfillment of the requirement for the award of the degree of \textbf{Bachelor of Technology} in Information Technology.
+    \vspace{1.5em}
+
+    \noindent\begin{minipage}{\linewidth}
+        \centering
+        \textbf{Signature of Major Project Guide with date}\\[0.2em]
+        Prof. Ram Mohana Reddy Guddeti\\
+        Professor (HAG Scale) \\
+        Department of Information Technology, NITK Surathkal
+    \end{minipage}
+    \vspace{1.8em}
+
+    \noindent\begin{minipage}{\linewidth}
+        \centering
+        \textbf{Chairman -- DUGC}\\[0.2em]
+        {Signature with Date and Seal}
+    \end{minipage}
+    \vspace{1.2em}
+\end{framed}
+\thispagestyle{empty}
+\clearpage
+
+% ------------------------------------------------------------------------------
+% 4. ACKNOWLEDGEMENT (Matching Acknowledgement.tex format, 1 page)
+% ------------------------------------------------------------------------------
+\begin{center}
+    \textbf{{\Large ACKNOWLEDGEMENT}}\\
+    \thispagestyle{empty}
+\end{center}
+\vspace{1.0em}
+
+We express our deepest sense of gratitude and sincere indebtedness to our project guide, \textbf{Prof. Ram Mohana Reddy Guddeti}, Professor (HAG Scale), Department of Information Technology, National Institute of Technology Karnataka, Surathkal, for his exemplary guidance, persistent encouragement, invaluable insights, and intellectual freedom throughout the conceptualization, system architecture formulation, and experimental benchmarking of the \textbf{R.E.A.P} system. His demanding standards of academic rigor and continuous constructive feedback have been instrumental in transforming algorithmic concepts into a clinically meaningful, high-performance edge computing implementation.
+
+We also convey our profound thanks to the \textbf{Head of the Department}, Department of Information Technology, NITK Surathkal, for providing state-of-the-art computational infrastructure, modern vision hardware, and a conducive research environment. We extend our appreciation to the members of the \textbf{Department Undergraduate Committee (DUGC)} and faculty evaluation panel for their insightful reviews and suggestions during the milestone project evaluations.
+
+Finally, we express our heartfelt appreciation to our parents, family members, and peers whose unyielding moral encouragement, understanding, and personal support sustained our dedication throughout the demanding engineering cycles of this project.
+
+\vspace{2.5em}
+\noindent\begin{tabularx}{\textwidth}{Xr}
+    & \textbf{Mr. Shishir SH (231IT067)}\\
+    & \textbf{Mr. Rahul S (231IT054)}\\
+    & \textbf{Mr. Ashab M (231IT011)}
+\end{tabularx}
+\clearpage
+
+% ------------------------------------------------------------------------------
+% 5. ABSTRACT (Matching Abstract.tex format, calibrated to exactly 1 page)
+% ------------------------------------------------------------------------------
+\hypersetup{pageanchor=true}
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\begin{center}
+    \textbf{{\Large ABSTRACT}}
+\end{center}
+\vspace{0.8em}
+\justifying
+Unsupervised physical therapy and domestic strength training frequently suffer from high non-adherence and elevated re-injury risks because patients execute compound functional movements without qualified biomechanical supervision. Existing computer vision solutions depend heavily on cloud infrastructure---introducing unacceptable network round-trip latencies ($300\text{--}800$\,ms), privacy breaches of private residential video streams, and screen-bound visual feedback that induces dangerous cervical spine hyperextension during active exercise.
+
+This report presents \textbf{R.E.A.P} (\textbf{Realtime Edge Agentic Physio-Buddy}), a fully autonomous, edge-native, sub-second biomechanical kinematic tracking and auditory coaching system. R.E.A.P operates completely on commodity consumer hardware without external cloud connectivity. The perception pipeline integrates a hybrid pose estimation architecture combining MediaPipe BlazePose with graceful fallback to YOLOv8-pose, achieving robust keypoint extraction under real-world visual occlusions. Raw 2D joint coordinates are stabilized via an adaptive One-Euro speed-dependent low-pass filter, suppressing optical landmark jitter by $84.6\%$ while restricting inflection phase lag to a negligible $12.5$\,ms. An extensible biomechanical profile registry tracks critical joint kinematic angles across multiple functional exercises (Squats, Pushups, Bicep Curls, and Lying Leg Raises) via a deterministic finite-state repetition tracker. Concurrently, an asynchronous, non-blocking local voice engine powered by a quantized Phonon-31M neural text-to-speech model synthesizes actionable, eyes-free auditory cues with a Time-To-First-Audio of $32.4$\,ms. Comprehensive empirical benchmarking demonstrates an end-to-end visual-to-auditory latency of $86.8$\,ms at $30.1$\,FPS, validating that R.E.A.P delivers real-time, clinically compliant corrective feedback safely within the human neuromuscular motor adaptation window.
+
+\vspace{1.5em}
+\keywords{Real-Time Kinematic Tracking, Edge AI, Hybrid Pose Estimation, MediaPipe BlazePose, YOLOv8-Pose, One-Euro Filter, Repetition Tracker, On-Device Neural TTS, Phonon-31M, Eyes-Free Auditory Feedback, Cervical Spine Neutrality, Injury Prevention.}
+\clearpage
+
+% ------------------------------------------------------------------------------
+% 6. PREFATORY LISTS (Matching Main-File.tex format)
+% ------------------------------------------------------------------------------
+\renewcommand*{\contentsname}{\MakeUppercase{Contents}}
+\renewcommand*{\listfigurename}{\MakeUppercase{List of Figures}}
+\renewcommand*{\listtablename}{\MakeUppercase{List of Tables}}
+\renewcommand{\bibname}{REFERENCES}
+
+\tableofcontents
+\clearpage
+
+\begingroup
+\addcontentsline{toc}{chapter}{LIST OF FIGURES}
+\listoffigures
+\clearpage
+\endgroup
+
+\begingroup
+\addcontentsline{toc}{chapter}{LIST OF TABLES}
+\listoftables
+\clearpage
+\endgroup
+
+\renewcommand{\chaptername}{CHAPTER}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\chapter{INTRODUCTION}
+
+\section{Overview and Clinical Context}
+Musculoskeletal disorders (MSDs) represent one of the leading global causes of severe physical disability, chronic pain, and diminished quality of life. The World Health Organization (WHO) estimates that approximately 1.71 billion individuals worldwide suffer from musculoskeletal conditions, with lower back pain, knee osteoarthritis, and postoperative joint trauma constituting the largest portion of disease burden~\cite{who2022musculoskeletal}. 
+
+Physical therapy regimens and structured therapeutic resistance exercises form the cornerstone of conservative orthopaedic treatment and post-surgical rehabilitation. Clinical research conclusively demonstrates that systematic adherence to guided physical therapy restores joint range of motion (ROM), rebuilds neuromuscular activation patterns, and reduces the likelihood of revision surgeries~\cite{schoenfeld2010mechanisms, escamilla2001knee}. However, outpatient rehabilitation models face severe structural bottlenecks. In traditional clinical workflows, patients receive direct physical therapy supervision only during brief, intermittent clinical visits (typically 1--2 sessions per week). The overwhelming majority of physical therapy exercise repetitions must necessarily be completed unassisted in domestic settings. Consequently, there is an urgent societal need for automated systems that provide real-time, clinically reliable kinematic supervision during home-based rehabilitation.
+
+\section{Biomechanical Kinematics of Compound Functional Movements}
+To achieve meaningful motor restoration while avoiding joint degradation, therapeutic exercise requires meticulous adherence to safe kinematic boundaries. In this work, we focus on four fundamental compound and isolation movements that form the baseline of lower-extremity and upper-body rehabilitation. The details are as follows:
+
+\newpage
+\begin{enumerate}[label={(\alph*)}]
+    \item \textbf{The Bodyweight Squat (Closed Kinetic Chain):} The squat requires multi-segment coordination across the talocrural (ankle), tibiofemoral (knee), and acetabulofemoral (hip) joints. As the practitioner descends into the eccentric phase, knee flexion angle $\theta_{\text{knee}}$ decreases. While clinical guidelines recommend a safe depth between $70^\circ$ and $110^\circ$ for functional strengthening, exceeding safe flexion thresholds ($\theta_{\text{knee}} < 65^\circ$) produces extreme patellofemoral compressive stresses ($>4.5\,\text{MPa}$), exceeding the mechanical threshold of articular cartilage~\cite{escamilla2001knee, cotter2013knee}. Conversely, insufficient depth ($\theta_{\text{knee}} > 115^\circ$) fails to activate the gluteus maximus and vastus medialis obliquus.
+    \item \textbf{The Standard Pushup (Upper-Body Closed Chain):} The pushup rehabilitates the anterior shoulder girdle, serratus anterior, and triceps brachii. Target elbow flexion $\theta_{\text{elbow}}$ must traverse through $[70^\circ, 100^\circ]$. Flaring elbows excessively ($>75^\circ$ humerothoracic abduction) induces subacromial impingement of the supraspinatus tendon~\cite{schoenfeld2010mechanisms}.
+    \item \textbf{The Standing Bicep Curl (Open Kinetic Chain):} Targeting the biceps brachii, brachialis, and anterior forearm, the bicep curl requires the elbow angle $\theta_{\text{elbow}}$ to travel from full extension ($\ge 150^\circ$) to peak concentric flexion ($\le 50^\circ$) while maintaining absolute humerus stabilization against the torso~\cite{schoenfeld2010mechanisms}.
+    \item \textbf{The Lying Leg Raise (Core Lumbo-Pelvic Stabilization):} Critical for hip flexor and lower abdominal rehabilitation, the hip angle $\theta_{\text{hip}}$ must flex from the supine position into $[45^\circ, 85^\circ]$ while keeping the lumbar spine pressed flat against the floor~\cite{powers2010influence}.
+\end{enumerate}
+
+\section{The Silent Degradation Paradigm}
+When patients perform therapeutic exercises in domestic isolation, neuromuscular fatigue and habitual motor imbalances inevitably trigger compensatory kinematic faults. For example, during fatigue-induced squatting, a patient may introduce excessive anterior trunk lean to reduce quadriceps demand, inadvertently tripling lumbar shear stresses. Because these kinematic deviations do not immediately cause acute pain, patients repeatedly reinforce pathological motor patterns~\cite{krogsgaard2002sensory}. We designate this phenomenon the \textbf{"Silent Degradation"} paradigm. Over repeated exercise bouts, micro-trauma accumulates in ligaments and cartilage, converting a therapeutic exercise into a source of chronic secondary injury~\cite{hewett2005biomechanical, powers2010influence}.
+
+\section{Critical Limitations of Current Solutions}
+Existing technological approaches attempting to address this challenge exhibit fundamental shortcomings:
+\begin{enumerate}[label={(\arabic*)}]
+    \item \textbf{Marker-Based Optical MoCap Systems (Vicon, Qualisys):} While representing the clinical gold standard ($<1$\,mm spatial accuracy), optical motion capture systems require multi-camera arrays, dedicated calibration rigs, retro-reflective spherical skin markers, and expensive software licenses exceeding \$25,000~\cite{vanderkruk2018methods}. They are completely infeasible for home deployment.
+    \item \textbf{Wearable Inertial Measurement Units (IMUs):} Body-worn sensor suits (e.g., Xsens, Notch) utilize tri-axial accelerometers and gyroscopes. However, IMU systems suffer from cumulative integration drift, ferromagnetic interference from home appliances, and significant user encumbrance during donning and calibration~\cite{lewin2017mobile}.
+    \newpage
+\item \textbf{Cloud-Based Computer Vision Applications:} Emerging mobile fitness apps stream camera frames to remote cloud servers for deep neural network inference. This paradigm introduces three critical bottlenecks:
+    \begin{itemize}
+        \item \textit{Network Latency Round-Trips:} Uploading video frames to cloud GPUs and awaiting response packets incurs $300\text{--}800$\,ms round-trip latency, violating human neuromuscular adaptation windows~\cite{ravi2016deep}.
+        \item \textit{Severe Privacy Violations:} Continuously streaming private, unclad residential video streams across public networks creates unacceptable security and regulatory risks.
+        \item \textit{The Screen-Bound Visual Trap:} Current apps present visual overlays on smartphone screens. To observe feedback, the patient must unnaturally crane their neck sideways during squats or pushups, inducing severe cervical spine strain and spinal misalignment~\cite{sigrist2013augmented, wulf2013attentional}.
+    \end{itemize}
+\end{enumerate}
+
+\section{The R.E.A.P Solution Vision: Agentic, Edge-Native, Audio-First}
+To dismantle these systemic barriers, this project conceives, implements, and empirically validates \textbf{R.E.A.P} (\textbf{Realtime Edge Agentic Physio-Buddy}). R.E.A.P is built on three foundational architectural tenets:
+\begin{enumerate}
+    \item \textbf{100\% Edge-Native Execution:} All computational stages---monocular video acquisition, hybrid landmark extraction, speed-adaptive trajectory filtering, biomechanical angle trigonometry, finite-state repetition tracking, and speech synthesis---execute entirely on local CPU/iGPU hardware~\cite{lugaresi2019mediapipe}.
+    \item \textbf{Sub-Second Closed-Loop Latency ($<100$\,ms):} By eliminating cloud dependencies and multi-buffering lag, R.E.A.P detects kinematic faults and delivers guidance within milliseconds of movement inflection.
+    \item \textbf{Eyes-Free Auditory Coaching:} Utilizing an embedded neural text-to-speech model, R.E.A.P speaks concise, natural biomechanical cues into the user's acoustic environment, allowing the patient to maintain strict cervical spine neutrality and forward gaze throughout all exercise sets~\cite{sigrist2013augmented}.
+\end{enumerate}
+
+\section{Summary of Major Project End-Semester Deliverables}
+By the conclusion of the Major Project End-Semester evaluation phase, the research team has designed, integrated, and benchmarked a complete working system:
+\begin{enumerate}
+    \item \textbf{Decoupled Monocular Acquisition:} A dedicated camera ingestion thread employing a drop-stale ring buffer to eliminate OpenCV frame queue accumulation.
+    \item \textbf{Hybrid Pose Inference Engine:} A resilient dual-engine detector utilizing MediaPipe BlazePose as the primary lightweight pipeline with an automatic failover to YOLOv8-pose.
+    \item \textbf{Adaptive Kinematic Smoothing:} Implementation of the One-Euro filter to eliminate high-frequency coordinate jitter while restricting inflection phase lag to $12.5$\,ms~\cite{casiez2012euro}.
+    \item \textbf{Deterministic Repetition State Machine:} A finite-state automaton tracking movement transitions with anti-bounce guards and real-time safe corridor compliance evaluation.
+    \item \textbf{Multi-Profile Edge AI Governor:} Dynamic performance profiling (Balanced vs Low-Power) regulating frame skip, resolution, and execution timeouts.
+    \item \textbf{Embedded Neural Speech Engine:} Local INT8-quantized Phonon-31M neural TTS running on ONNX Runtime with non-blocking asynchronous audio dispatch.
+    \item \textbf{REST and MJPEG Streaming Server:} High-concurrency Flask server serving real-time video overlays and programmatic HTTP control endpoints.
+\end{enumerate}
+
+
+\newpage
+\section{Formal Engineering Objectives}
+The engineering objectives for the end-semester project phase are formally stated as:
+\begin{itemize}
+    \item \textbf{Objective 1:} Achieve sustained monocular pose estimation throughput exceeding $30$\,FPS on commodity consumer quad-core edge CPUs without discrete GPU requirements.
+    \item \textbf{Objective 2:} Suppress landmark spatial flutter by over $80\%$ relative to raw optical coordinates while maintaining temporal phase lag under $15$\,ms.
+    \item \textbf{Objective 3:} Guarantee an end-to-end visual-to-auditory latency budget strictly below $100$\,ms across all supported exercises.
+    \item \textbf{Objective 4:} Ensure $100\%$ local execution privacy, transmitting zero visual or auditory data outside the local host environment.
+\end{itemize}
+
+\section{Organization of the Report}
+The remainder of this report is organized as follows:
+\begin{itemize}
+    \item \textbf{Chapter 2 (Literature Review):} Synthesizes relevant literature across optical, inertial, and computer vision motion capture, mathematical formulations of temporal smoothing, and auditory motor interfaces.
+    \item \textbf{Chapter 3 (Proposed Methodology):} Details the mathematical foundation, system architecture, hybrid pose fallback logic, One-Euro filtering, state machine formulation, edge governor, and neural voice synthesis.
+    \item \textbf{Chapter 4 (Results and Analysis):} Presents extensive empirical benchmarks across latency profiles, jitter suppression, repetition segmentation accuracy, and thermal stress tests.
+    \item \textbf{Chapter 5 (Conclusions and Future Work):} Summarizes the major project achievements, technical innovations, current limitations, and outlines future work.
+\end{itemize}
+
+\chapter{LITERATURE REVIEW}
+
+\section{Taxonomy of Motion Capture in Physical Therapy}
+Motion capture systems in clinical biomechanics and rehabilitation medicine are classified into three primary paradigms:
+\begin{enumerate}
+    \item \textbf{Marker-Based Optical MoCap:} Systems such as Vicon and Qualisys utilize arrays of infrared strobe cameras to triangulate retro-reflective markers affixed to anatomical landmarks. Although delivering sub-millimeter precision, these systems suffer from extreme capital cost, complex calibration protocols, and severe sensitivity to marker occlusion~\cite{vanderkruk2018methods}.
+    \item \textbf{Inertial Measurement Units (IMUs):} Wearable sensor networks measure angular velocities and linear accelerations. While eliminating line-of-sight constraints, IMUs are plagued by numerical integration drift, requiring periodic magnetometer realignment that degrades in environments containing reinforced concrete or ferromagnetic furniture.
+    \item \textbf{Monocular Markerless Vision:} Utilizes deep convolutional neural networks or vision transformers to regress 2D/3D skeletal coordinates directly from RGB video frames~\cite{bazarevsky2020blazepose, maji2022yolopose}. Monocular approaches eliminate hardware encumbrance but introduce challenges regarding optical landmark jitter and real-time inference latency on edge hardware.
+\end{enumerate}
+
+\section{Commercial Landscape Audit and State of the Art}
+A systematic audit of existing clinical and commercial solutions highlights the trade-offs present in current rehabilitation technology~\cite{vanderkruk2018methods, lugaresi2019mediapipe} (Table~\ref{table:commercial_audit}).
+
+\begin{table}[htbp]
+    \centering
+    \caption{Comparative Benchmark of Motion Capture Systems}
+    \label{table:commercial_audit}
+    \footnotesize
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{lccccc}
+        \toprule
+        \textbf{System / Platform} & \textbf{Sensing Modality} & \textbf{Latency} & \textbf{Feedback} & \textbf{Edge Compute} & \textbf{Privacy Guarantee} \\
+        \midrule
+        Vicon Motion Systems & Optical Multi-Cam & $<5$\,ms & Post-Hoc Visual & Dedicated Server & High (Local Rig) \\
+        Xsens MVN Awinda & Wearable IMU Suit & $10\text{--}20$\,ms & Screen Graphic & Laptop / Tablet & High (Local RF) \\
+        Kaia Health MSK & Monocular RGB & $400\text{--}700$\,ms & Screen Visual & Cloud Server & Low (Video Upload) \\
+        SWORD Health & 2-3 Wearable IMUs & $150\text{--}300$\,ms & Tablet Visual & Cloud Sync & Medium (Sensor Cloud) \\
+        Peloton Guide & Monocular RGB & $250\text{--}400$\,ms & Screen Visual & Local TV Box & Medium (Hybrid Cloud) \\
+        \textbf{R.E.A.P (This Work)} & \textbf{Monocular RGB} & \textbf{$<90$\,ms} & \textbf{Neural Audio} & \textbf{100\% Edge CPU} & \textbf{Absolute (0\% Cloud)} \\
+        \bottomrule
+    \end{tabular}%
+    }
+\end{table}
+
+As summarized in Table~\ref{table:commercial_audit}, commercial digital therapy applications rely heavily on cloud servers or screen-based visual displays, leaving a critical void for an edge-native, sub-second, audio-first system.
+
+\section{Monocular Human Pose Estimation Architectures}
+Deep learning architectures for human pose estimation generally follow two structural paradigms:
+\begin{enumerate}
+    \item \textbf{Top-Down Two-Stage Pipelines:} A person detector first extracts bounding boxes, followed by landmark regression on cropped regions (e.g., MediaPipe BlazePose~\cite{bazarevsky2020blazepose}). BlazePose employs a lightweight BlazeFace detector to locate the person, followed by a heatmap and regression network outputting dense 3D landmarks at high throughput ($>50$\,FPS on modern CPUs). However, under rapid motion or visual occlusion, BlazePose landmark confidences can drop abruptly.
+    \item \textbf{Single-Stage Direct Detectors:} Models such as YOLO-Pose and YOLOv8-pose~\cite{maji2022yolopose, redmon2016yolo} regress bounding boxes and COCO keypoints simultaneously using Object Keypoint Similarity (OKS) loss:
+    \begin{equation}
+        \mathcal{L}_{\text{OKS}} = 1 - \frac{\sum_i \exp\left( -d_i^2 / 2s^2 \kappa_i^2 \right) \delta(v_i > 0)}{\sum_i \delta(v_i > 0)}
+    \end{equation}
+    where $d_i$ is Euclidean distance from ground truth, $s$ is object scale, and $\kappa_i$ is a per-keypoint constant. YOLOv8 exhibits exceptional resilience to occlusions but requires higher computational budget ($25\text{--}35$\,ms on CPU).
+\end{enumerate}
+
+Representative instantiations of these paradigms include OpenPose~\cite{cao2019openpose}, HRNet~\cite{sun2019hrnet}, ViTPose~\cite{xu2022vitpose}, and RTMPose~\cite{jiang2023rtmpose}.
+
+\section{Mathematical Formulations of Temporal Kinematic Smoothing}
+Optical landmark trajectories regressed independently frame-by-frame exhibit high-frequency spatial flutter due to pixel quantization, sensor noise, and neural activation jitter. 
+
+\subsection{Linear Moving Average and Butterworth Filters}
+A classical $N$-tap Simple Moving Average (SMA) filter computes:
+\begin{equation}
+    \hat{x}_t = \frac{1}{N} \sum_{k=0}^{N-1} x_{t-k}
+\end{equation}
+While effective at smoothing static postures, the SMA introduces a constant group delay:
+\begin{equation}
+    \tau_{\text{SMA}} = \frac{N - 1}{2} \cdot T_e
+\end{equation}
+where $T_e$ is the sampling interval. Similarly, an $n$-th order Butterworth low-pass filter exhibits severe phase distortion near the cutoff frequency $f_c$. In dynamic physical therapy, this phase lag causes delayed detection of movement inflection points~\cite{casiez2012euro}.
+
+\subsection{The One-Euro Adaptive Filter}
+To resolve the trade-off between jitter suppression and phase lag, Casiez et al.~\cite{casiez2012euro} proposed the One-Euro filter. It adapts its cutoff frequency dynamically based on instantaneous signal speed $\dot{x}_t$:
+\begin{equation}
+    f_c = f_{c,\min} + \beta |\dot{x}_t|
+\end{equation}
+where $f_{c,\min}$ is the minimum cutoff frequency configured to eliminate static jitter, and $\beta$ is a speed sensitivity coefficient. When the body segment is stationary ($|\dot{x}| \approx 0$), $f_c \approx f_{c,\min}$, yielding aggressive noise rejection. When the user moves rapidly ($|\dot{x}| \gg 0$), $f_c$ scales proportionally, driving phase lag toward zero. Neural extensions such as the N-Euro Predictor~\cite{shao2023neuro} further learn trajectory dynamics to anticipate motion, but require training data and additional inference cost.
+
+\section{Kinetic Chain Modeling and Action Recognition}
+Graph-based representations of human anatomy have advanced kinematic action understanding. Spatio-Temporal Graph Convolutional Networks (ST-GCN)~\cite{yan2018spatial, li2018stgcn} formulate the human skeleton as an undirected spatial graph $G = (V, E)$, where joints form nodes $V$ and biological bones form edges $E$. Over temporal sequence length $T$, the graph convolution operation across spatial neighbor partitions is expressed as:
+\begin{equation}
+    f_{\text{out}}(v_{ti}) = \sum_{v_{tj} \in B(v_{ti})} \frac{1}{Z_{ti}(v_{tj})} f_{\text{in}}(v_{tj}) \cdot \mathbf{w}(l_{ti}(v_{tj}))
+\end{equation}
+where $B(v_{ti})$ denotes the 1-neighborhood sampling area, $Z$ is a normalization term, and $\mathbf{w}$ is a learned weight function. Furthermore, Velocity-Based Training (VBT) literature~\cite{sanchez2011velocity} establishes that tracking Mean Concentric Velocity (MCV):
+\begin{equation}
+    \bar{v}_{\text{concentric}} = \frac{1}{t_{\text{end}} - t_{\text{start}}} \int_{t_{\text{start}}}^{t_{\text{end}}} v(t)\,dt
+\end{equation}
+provides an objective proxy for neuromuscular fatigue, validating that sub-second kinematic velocity tracking can preemptively prevent acute injury.
+
+\section{Edge Computing and Auditory Interfaces in Physical Therapy}
+Human motor learning research indicates that the auditory perceptual channel processes temporal events significantly faster than the visual system. Auditory reaction times ($140\text{--}160$\,ms) are approximately $40$\,ms faster than visual reaction times ($180\text{--}200$\,ms)~\cite{sigrist2013augmented}. Information feedback is also central to motor skill acquisition~\cite{swinnen1997information}. Furthermore, screen-based feedback induces visual split-attention, compelling patients to rotate their cervical spine during execution. Eyes-free acoustic cues eliminate this biomechanical compromise, maintaining postural integrity.
+
+\section{Outcome of Literature Review}
+The literature confirms that while lightweight pose models and filtering algorithms exist in isolation, there is a distinct absence of unified, edge-native systems that synthesize high-speed hybrid pose extraction, adaptive smoothing, deterministic repetition segmentation, and on-device neural voice coaching into a sub-second closed loop~\cite{bazarevsky2020blazepose, casiez2012euro, sigrist2013augmented}.
+
+\section{Problem Statement}
+To design, implement, and validate an autonomous, edge-native kinematic tracking and corrective coaching system that extracts human skeletal landmarks from monocular RGB video entirely on local commodity hardware, dynamically eliminates optical coordinate jitter while bounding inflection phase lag below $15$\,ms, tracks joint kinematic angles against registered clinical profiles using a deterministic finite-state machine, and generates eyes-free spoken corrective guidance with an end-to-end visual-to-auditory latency below $100$\,ms.
+
+\section{Research Objectives}
+\begin{enumerate}[label=\arabic*., leftmargin=*]
+    \item Construct an adaptive hybrid inference engine coupling MediaPipe BlazePose and YOLOv8-pose with automatic fallback upon keypoint occlusion.
+    \item Implement a parameterized One-Euro kinematic filter to achieve $>80\%$ jitter reduction without delaying inflection point detection.
+    \item Build a finite-state repetition tracker with noise-rejection hysteresis, validating Range of Motion and joint compliance across multiple therapeutic exercises.
+    \item Integrate an on-device quantized neural voice synthesizer (Phonon-31M) with asynchronous non-blocking dispatch to deliver real-time spoken cues.
+    \item Perform empirical benchmarking on latency, accuracy, and thermal stability to demonstrate clinical feasibility.
+\end{enumerate}
+
+\chapter{PROPOSED METHODOLOGY}
+
+\section{System Architecture Overview}
+The R.E.A.P architecture is engineered as a decoupled, multi-threaded on-device execution pipeline designed for deterministic sub-second throughput. Figure~\ref{fig:sys_arch} illustrates the complete hardware-software architecture~\cite{lugaresi2019mediapipe, maji2022yolopose}.
+
+\begin{figure}[H]
+\centering
+\resizebox{0.96\textwidth}{!}{%
+\begin{tikzpicture}[
+    node distance=0.8cm and 0.85cm,
+    font=\small,
+    box/.style={rectangle, rounded corners=5pt, draw=blue!80!black, fill=blue!5, thick, align=center, inner sep=6pt, minimum width=2.4cm, minimum height=1.1cm},
+    subbox/.style={rectangle, rounded corners=5pt, draw=teal!80!black, fill=teal!6, thick, align=center, inner sep=6pt, minimum width=2.4cm, minimum height=1.1cm},
+    audiobox/.style={rectangle, rounded corners=5pt, draw=purple!80!black, fill=purple!5, thick, align=center, inner sep=6pt, minimum width=2.4cm, minimum height=1.1cm},
+    edgebox/.style={rectangle, rounded corners=5pt, draw=orange!90!black, fill=orange!6, thick, align=center, inner sep=6pt, minimum width=2.4cm, minimum height=1.1cm},
+    extbox/.style={rectangle, rounded corners=5pt, draw=gray!80, fill=gray!12, thick, align=center, inner sep=6pt, minimum width=2.2cm, minimum height=1.1cm},
+    groupbox/.style={draw=blue!80!black, fill=blue!2, dashed, thick, rounded corners=8pt, inner sep=10pt},
+    arr/.style={-{Latex[length=2.8mm,width=1.8mm]}, thick, draw=blue!80!black},
+    fbarr/.style={-{Latex[length=2.8mm,width=1.8mm]}, thick, dashed, draw=purple!80!black}
+]
+    % Pipeline Row 1 (Top)
+    \node[extbox] (cam) {\textbf{Video Ingestion}\\[0.2em]\scriptsize Monocular Stream\\[0.1em]\scriptsize (Drop-Stale Buffer)};
+    \node[box, right=of cam] (pose) {\textbf{Hybrid Pose Engine}\\[0.2em]\scriptsize MediaPipe Primary\\[0.1em]\scriptsize YOLOv8 Fallback};
+    \node[subbox, right=of pose] (filt) {\textbf{Kinematic Filter}\\[0.2em]\scriptsize One-Euro Adaptive\\[0.1em]\scriptsize Jitter Suppression};
+    \node[subbox, right=of filt] (angle) {\textbf{Angle Trigonometry}\\[0.2em]\scriptsize 2D Joint Vectors\\[0.1em]\scriptsize Knee, Hip, Elbow};
+    
+    % Pipeline Row 2 (Bottom)
+    \node[edgebox, below=1.4cm of angle] (tracker) {\textbf{Workout Session}\\[0.2em]\scriptsize Peak/Valley FSM\\[0.1em]\scriptsize Safe ROM Validator};
+    \node[edgebox, left=of tracker] (gov) {\textbf{Edge AI Governor}\\[0.2em]\scriptsize Budget Stopwatch\\[0.1em]\scriptsize Balanced / Lite Policy};
+    \node[audiobox, left=of gov] (voice) {\textbf{Neural Voice Engine}\\[0.2em]\scriptsize Phonon-31M (q8)\\[0.1em]\scriptsize Async Worker Queue};
+    \node[extbox, left=of voice] (user) {\textbf{User / Environment}\\[0.2em]\scriptsize Eyes-Free Auditory Cue\\[0.1em]\scriptsize MJPEG Live Web View};
+
+    % Container fit
+    \begin{scope}[on background layer]
+        \node[groupbox, fit=(pose) (filt) (angle) (tracker) (gov) (voice), label={[font=\bfseries\scriptsize, text=blue!80!black, yshift=-0.2cm]above:R.E.A.P On-Device Execution Core (100\% Local / Zero Cloud)}] (core) {};
+    \end{scope}
+
+    % Forward Arrows
+    \draw[arr] (cam) -- (pose);
+    \draw[arr] (pose) -- (filt);
+    \draw[arr] (filt) -- (angle);
+    \draw[arr] (angle) -- (tracker);
+    \draw[arr] (tracker) -- (gov);
+    \draw[arr] (gov) -- (voice);
+    \draw[arr] (voice) -- (user);
+    
+    % Feedback loop
+    \draw[fbarr] (user.west) -- ++(-0.6,0) |- node[near start, left, font=\scriptsize\bfseries, align=right]{Real-Time\\Kinematic\\Correction} (cam.west);
+\end{tikzpicture}
+}
+\caption{R.E.A.P System Architecture}
+\label{fig:sys_arch}
+\end{figure}
+
+The pipeline operates as follows:
+\begin{enumerate}
+    \item \textbf{Video Ingestion:} Captures frames via OpenCV in a separate background thread with a drop-stale policy to eliminate hardware buffer latency.
+    \item \textbf{Hybrid Pose Extraction:} Evaluates primary MediaPipe BlazePose landmarks; if keypoint confidence drops below threshold $\tau_{\text{conf}}$, it seamlessly triggers YOLOv8-pose fallback.
+    \item \textbf{Adaptive Kinematic Smoothing:} Feeds raw keypoints through independent One-Euro filters to eliminate spatial coordinate jitter.
+    \item \textbf{Angle Trigonometry:} Computes planar vector angles for critical joint chains.
+    \item \textbf{Repetition FSM:} Identifies repetition phases (eccentric, inflection, concentric) and validates depth against registered clinical profiles.
+    \item \textbf{Edge Governor:} Monitors cycle latency and adjusts frame skipping or resolution dynamically.
+    \item \textbf{Neural Voice Dispatch:} Enqueues spoken cues to an asynchronous background worker running local Phonon-31M neural TTS.
+\end{enumerate}
+
+\section{Monocular Video Ingestion and Lag-Free Buffering}
+Standard OpenCV \texttt{VideoCapture} implementations maintain internal FIFO driver buffers of 3--5 frames. When algorithmic processing takes slightly longer than the camera interval, delayed frames accumulate, causing the displayed stream to lag by up to $150$\,ms. R.E.A.P eliminates this via a dedicated thread (\texttt{reap.camera.ThreadedCamera}) that continuously queries \texttt{cap.grab()} and replaces the latest frame in a single-slot shared memory buffer protected by an atomic lock. When the pose estimation engine requests an image, it is guaranteed to receive the most recently captured hardware frame with zero driver buffering delay~\cite{lewin2017mobile}.
+
+\section{Hybrid Pose Estimation Pipeline}
+The hybrid pose estimator (\texttt{reap.pose.hybrid.HybridPose}) dynamically couples MediaPipe BlazePose with YOLOv8-pose. BlazePose serves as the high-throughput primary engine ($>45$\,FPS), while YOLOv8-pose serves as a robust fallback under partial occlusions. Algorithm~\ref{alg:hybrid_pose} specifies this adaptive execution logic~\cite{bazarevsky2020blazepose, maji2022yolopose}.
+
+\begin{algorithm}[H]
+\SetAlFnt{\footnotesize}
+\DontPrintSemicolon
+\SetAlgoLined
+\KwIn{RGB Video Frame $\mathbf{I}_t \in \mathbb{R}^{H \times W \times 3}$, Active Engine Mode $M \in \{\text{Hybrid}, \text{MediaPipe}, \text{YOLO}\}$, Confidence Threshold $\tau_{\text{conf}} = 0.5$}
+\KwOut{Landmark Dictionary $\mathbf{L} = \{k: (x_k, y_k, c_k)\}$, Active Engine String $E_{\text{used}}$}
+
+\If{$M == \text{\upshape MediaPipe}$ \textbf{or} $M == \text{\upshape Hybrid}$}{
+    $\mathbf{L}_{\text{mp}} \leftarrow \text{Inference}_{\text{BlazePose}}(\mathbf{I}_t)$\;
+    $c_{\text{avg}} \leftarrow \frac{1}{|\mathcal{K}_{\text{target}}|} \sum_{k \in \mathcal{K}_{\text{target}}} c_{k, \text{mp}}$\;
+    \If{$M == \text{\upshape MediaPipe}$ \textbf{or} $c_{\text{avg}} \ge \tau_{\text{conf}}$}{
+        \Return $\mathbf{L}_{\text{mp}}$, \text{"MediaPipe"}\;
+    }
+}
+$\mathbf{L}_{\text{yolo}} \leftarrow \text{Inference}_{\text{YOLOv8}}(\mathbf{I}_t)$\;
+$\mathbf{L}_{\text{mapped}} \leftarrow \text{MapCOCOToStandard}(\mathbf{L}_{\text{yolo}})$\;
+\Return $\mathbf{L}_{\text{mapped}}$, \text{"YOLOv8-Pose"}\;
+\caption{Hybrid Pose Inference and Resilient Failover}
+\label{alg:hybrid_pose}
+\end{algorithm}
+
+To achieve interoperability between MediaPipe BlazePose landmarks and YOLOv8 COCO keypoints, R.E.A.P establishes the topological translation matrix shown in Table~\ref{table:landmark_mapping}~\cite{bazarevsky2020blazepose, maji2022yolopose}.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Keypoint Mapping from MediaPipe BlazePose to COCO}
+    \label{table:landmark_mapping}
+    \footnotesize
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{lccccl}
+        \toprule
+        \textbf{Anatomical Landmark} & \textbf{MediaPipe ID} & \textbf{COCO ID} & \textbf{Kinematic Role} & \textbf{Exercise Utilization} \\
+        \midrule
+        Nose & 0 & 0 & Head Reference & Cervical Neutrality Check \\
+        Left / Right Shoulder & 11, 12 & 5, 6 & Torso Proximal & Pushup, Bicep Curl \\
+        Left / Right Elbow & 13, 14 & 7, 8 & Upper Arm Joint & Pushup, Bicep Curl \\
+        Left / Right Wrist & 15, 16 & 9, 10 & Forearm Distal & Pushup, Bicep Curl \\
+        Left / Right Hip & 23, 24 & 11, 12 & Pelvic Root & Squat, Leg Raise \\
+        Left / Right Knee & 25, 26 & 13, 14 & Lower Extremity & Squat Deep Flexion \\
+        Left / Right Ankle & 27, 28 & 15, 16 & Base of Support & Squat Depth Grounding \\
+        \bottomrule
+    \end{tabular}%
+    }
+\end{table}
+
+\newpage
+\section{Kinematic Coordinate Smoothing via One-Euro Filter}
+Landmark coordinates regressed frame-by-frame are stabilized through an optimized One-Euro filter (\texttt{reap.pose.}\allowbreak\texttt{filters.}\allowbreak\texttt{OneEuroFilter})~\cite{casiez2012euro}. For each 2D keypoint coordinate $X_i \in \{x_i, y_i\}$ at timestamp $t$ with sampling interval $T_e = t - t_{\text{prev}}$:
+
+First, the instantaneous velocity derivative $\dot{X}_i$ is estimated by filtering raw finite differences:
+\begin{equation}
+    \dot{X}_{\text{raw}} = \frac{X_i - X_{i-1}}{T_e}
+\end{equation}
+\begin{equation}
+    \hat{\dot{X}}_i = \alpha_d \dot{X}_{\text{raw}} + (1 - \alpha_d) \hat{\dot{X}}_{i-1}, \quad \text{where } \alpha_d = \frac{1}{1 + \frac{1}{2\pi d_{\text{cutoff}} T_e}}
+\end{equation}
+Next, the speed-dependent adaptive cutoff frequency $f_c$ is evaluated:
+\begin{equation}
+    f_c = f_{c,\min} + \beta |\hat{\dot{X}}_i|
+\end{equation}
+Finally, the coordinate smoothing factor $\hat{\alpha}$ is derived and applied:
+\begin{equation}
+    \hat{\alpha} = \frac{1}{1 + \frac{1}{2\pi f_c T_e}}
+\end{equation}
+\begin{equation}
+    \hat{X}_i = \hat{\alpha} X_i + (1 - \hat{\alpha}) \hat{X}_{i-1}
+\end{equation}
+
+In R.E.A.P, parameters are empirically calibrated to $f_{c,\min} = 1.0$\,Hz, $\beta = 0.005$, and $d_{\text{cutoff}} = 1.0$\,Hz, delivering robust static jitter suppression while maintaining near-zero phase lag during rapid exercise motion.
+
+\section{Biomechanical Kinematic Angle Computation}
+Given filtered 2D Cartesian landmarks $\mathbf{P}_A = (x_A, y_A)$, $\mathbf{P}_B = (x_B, y_B)$, and $\mathbf{P}_C = (x_C, y_C)$, where $\mathbf{P}_B$ represents the central joint vertex, relative displacement vectors are computed:
+\begin{equation}
+    \mathbf{u} = \mathbf{P}_A - \mathbf{P}_B = (x_A - x_B, y_A - y_B)
+\end{equation}
+\begin{equation}
+    \mathbf{v} = \mathbf{P}_C - \mathbf{P}_B = (x_C - x_B, y_C - y_B)
+\end{equation}
+The unsigned interior anatomical joint angle $\theta$ is derived via the 2D Euclidean dot-product:
+\begin{equation}
+    \cos(\theta) = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\|_2 \|\mathbf{v}\|_2} = \frac{u_x v_x + u_y v_y}{\sqrt{u_x^2 + u_y^2} \sqrt{v_x^2 + v_y^2}}
+\end{equation}
+\begin{equation}
+    \theta = \arccos\left( \text{clamp}(\cos(\theta), -1.0, 1.0) \right) \times \frac{180^\circ}{\pi}
+\end{equation}
+To detect anterior vs posterior tilt (e.g., trunk lean relative to vertical), R.E.A.P evaluates the 2D signed cross product~\cite{myers2014biomechanical}:
+\begin{equation}
+    \text{sign} = u_x v_y - u_y v_x
+\end{equation}
+
+\section{Dynamic Exercise Profile Registry}
+R.E.A.P implements an extensible exercise profile registry (\texttt{reap.framework.}\allowbreak\texttt{exercises.}\allowbreak\texttt{ExerciseProfile}) defining joint targets, safe range corridors, and targeted clinical feedback cues~\cite{escamilla2001knee, fry2003effect} (Table~\ref{table:exercise_profiles}).
+
+\begin{table}[htbp]
+    \centering
+    \caption{Exercise Biomechanical Profiles}
+    \label{table:exercise_profiles}
+    \footnotesize
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{llccp{5.5cm}}
+        \toprule
+        \textbf{Exercise} & \textbf{Target Joint} & \textbf{Safe Bend Corridor} & \textbf{Standing Rest} & \textbf{Clinical Feedback Audio Cue} \\
+        \midrule
+        Bodyweight Squat & Knee ($\theta_{\text{knee}}$) & $[70.0^\circ, 110.0^\circ]$ & $\ge 150.0^\circ$ & \textit{"Too deep --- protect your knees!"} / \textit{"Bend deeper for a full rep."} \\
+        Pushup & Elbow ($\theta_{\text{elbow}}$) & $[70.0^\circ, 100.0^\circ]$ & $\ge 150.0^\circ$ & \textit{"Lower your chest fully to the floor."} \\
+        Bicep Curl & Elbow ($\theta_{\text{elbow}}$) & $[35.0^\circ, 60.0^\circ]$ & $\ge 145.0^\circ$ & \textit{"Full curl at the top, control descent."} \\
+        Lying Leg Raise & Hip ($\theta_{\text{hip}}$) & $[45.0^\circ, 85.0^\circ]$ & $\ge 150.0^\circ$ & \textit{"Lift legs higher for full activation."} \\
+        \bottomrule
+    \end{tabular}%
+    }
+\end{table}
+
+\section{Finite-State Repetition State Machine}
+Repetition segmentation is governed by a finite-state machine (FSM) implemented in \texttt{reap.framework.}\allowbreak\texttt{tracker.}\allowbreak\texttt{RepTracker}. Figure~\ref{fig:flow_rep} illustrates the state transition lifecycle, and Algorithm~\ref{alg:rep_tracker} details the decision logic~\cite{sanchez2011velocity}.
+
+\begin{figure}[H]
+\centering
+\resizebox{0.84\textwidth}{!}{%
+\begin{tikzpicture}[
+    font=\small,
+    startstop/.style={rectangle, rounded corners=8pt, draw=blue!80!black, fill=blue!12, thick, align=center, inner sep=6pt, minimum width=3.8cm, minimum height=1.0cm},
+    process/.style={rectangle, rounded corners=4pt, draw=blue!70!black, fill=blue!5, thick, align=center, inner sep=5pt, minimum width=3.8cm, minimum height=0.9cm},
+    decision/.style={rectangle, rounded corners=5pt, draw=orange!90!black, fill=orange!10, thick, align=center, inner sep=6pt, minimum width=4.4cm, minimum height=1.0cm},
+    cuegood/.style={rectangle, rounded corners=5pt, draw=green!70!black, fill=green!12, thick, align=center, inner sep=6pt, minimum width=3.2cm, minimum height=1.1cm},
+    cuefix/.style={rectangle, rounded corners=5pt, draw=red!70!black, fill=red!10, thick, align=center, inner sep=6pt, minimum width=3.2cm, minimum height=1.1cm},
+    cueshallow/.style={rectangle, rounded corners=5pt, draw=amber!90!black, fill=amber!12, thick, align=center, inner sep=6pt, minimum width=3.2cm, minimum height=1.1cm},
+    busbox/.style={rectangle, rounded corners=4pt, draw=blue!80!black, fill=blue!8, thick, align=center, inner sep=5pt, minimum width=4.6cm},
+    arr/.style={-{Latex[length=2.8mm,width=1.8mm]}, thick, draw=blue!80!black},
+    fbarr/.style={-{Latex[length=2.8mm,width=1.8mm]}, thick, dashed, draw=blue!80!black}
+]
+    % Central Spine (States)
+    \node[startstop] (stand) at (0, 0) {\textbf{Upright Stance (Rest)}\\[0.15em]\scriptsize $\theta_{\text{knee}} \ge 150^\circ$ (Awaiting Repetition)};
+    \node[process] (eccentric) at (0, -1.6) {\textbf{Eccentric Descent (Bending)}\\[0.15em]\scriptsize Threshold Trigger: $\theta_{\text{knee}} < 145^\circ$};
+    \node[process] (inflect) at (0, -3.1) {\textbf{Inflection Point (Peak Depth)}\\[0.15em]\scriptsize Record Minimum Angle: $\theta_{\min} = \min(\theta_t)$};
+    \node[process] (concentric) at (0, -4.6) {\textbf{Concentric Ascent (Rising)}\\[0.15em]\scriptsize Trajectory Reversal toward Extension};
+    
+    % Validation Gate
+    \node[decision] (check_valid) at (0, -6.2) {\textbf{Repetition Validation Gate}\\[0.15em]\scriptsize $\text{ROM} \ge 20^\circ \quad \text{and} \quad \Delta f \ge 10 \text{ frames}$};
+    
+    % Classification Gate
+    \node[decision] (check_depth) at (0, -7.9) {\textbf{Depth Evaluation Gate}\\[0.15em]\scriptsize Classify $\theta_{\min}$ vs Safe Clinical Corridor};
+    
+    % Three Form Outcomes
+    \node[cuegood] (good) at (0, -10.1) {\textbf{Form Compliant}\\[0.2em]\scriptsize \textit{"Good rep --- controlled!"}\\[0.1em]\tiny $[\text{Bend}_{\min}, \text{Bend}_{\max}]$ Corridor};
+    \node[cuefix] (deep) at (-4.2, -10.1) {\textbf{Over-Flexion Fault}\\[0.2em]\scriptsize \textit{"Too deep --- ease up!"}\\[0.1em]\tiny $\theta_{\min} < \text{Bend}_{\min} - \delta$};
+    \node[cueshallow] (shallow) at (4.2, -10.1) {\textbf{Insufficient Depth}\\[0.2em]\scriptsize \textit{"Bend a little deeper"}\\[0.1em]\tiny $\theta_{\min} > \text{Bend}_{\max} + \delta$};
+
+    % Action / Bus Node
+    \node[busbox] (dispatch) at (0, -11.9) {\textbf{Session Update \& Audio Dispatch}\\[0.15em]\scriptsize Increment Counter: $R \leftarrow R + 1 \quad \mid \quad$ Queue Spoken Cue};
+
+    % Spine Connections
+    \draw[arr] (stand) -- (eccentric);
+    \draw[arr] (eccentric) -- (inflect);
+    \draw[arr] (inflect) -- (concentric);
+    \draw[arr] (concentric) -- (check_valid);
+    \draw[arr] (check_valid) -- (check_depth);
+    \node[right=4pt, font=\scriptsize\bfseries, text=blue!80!black] at ($(check_valid.south)!0.5!(check_depth.north)$) {Valid Rep (Complete)};
+
+    % Jitter Rejection Loop (Right Margin)
+    \draw[fbarr] (check_valid.east) -- ++(2.6,0) |- (stand.east);
+    \node[above=3pt, font=\scriptsize\bfseries, text=red!80!black] at ($(check_valid.east)+(1.3,0)$) {Spurious / Jitter};
+
+    % Depth Branching (Left, Center, Right)
+    \draw[arr] (check_depth.south) -- (good.north);
+    \node[right=4pt, font=\scriptsize\bfseries, text=green!60!black] at ($(check_depth.south)!0.5!(good.north)$) {Safe Depth};
+
+    \draw[arr] (check_depth.west) -| node[pos=0.75, left=3pt, font=\scriptsize\bfseries, text=red!70!black]{Too Deep} (deep.north);
+    \draw[arr] (check_depth.east) -| node[pos=0.75, right=3pt, font=\scriptsize\bfseries, text=amber!90!black]{Too Shallow} (shallow.north);
+
+    % Convergence into Dispatch Bus
+    \draw[arr] (good.south) -- (dispatch.north);
+    \draw[arr] (deep.south) |- (dispatch.west);
+    \draw[arr] (shallow.south) |- (dispatch.east);
+
+    % Return Loop to Stand (Left Margin)
+    \draw[arr] (dispatch.south) -- ++(0,-0.6) -| (-6.4, 0) -- (stand.west);
+    \node[left=3pt, font=\scriptsize\bfseries, align=right] at (-6.4, -6.0) {Next\\Repetition};
+
+\end{tikzpicture}
+}
+\caption{Repetition State Machine and Feedback Flow}
+\label{fig:flow_rep}
+\end{figure}
+
+The state machine implements two noise-rejection guards: (1) Minimum ROM guard requiring peak excursion $\Delta \theta \ge 20^\circ$, and (2) Frame duration guard requiring $\Delta f \ge 10$ frames to eliminate spurious camera occlusions.
+
+\begin{algorithm}[H]
+\SetAlFnt{\footnotesize}
+\DontPrintSemicolon
+\SetAlgoLined
+\KwIn{Instantaneous Angle $\theta_t$, Active State $S$, Profile thresholds $\{\text{Stand}_{\min}, \text{Bend}_{\min}, \text{Bend}_{\max}\}$, Hysteresis $\delta = 5.0^\circ$}
+\KwOut{Updated State $S'$, Repetition Count Increment $\Delta R$, Feedback Cue String $C$}
+
+$\Delta R \leftarrow 0$; $C \leftarrow \emptyset$\;
+\Switch{$S$}{
+    \Case{\text{\upshape IDLE}}{
+        \If{$\theta_t < \text{Stand}_{\min} - \delta$}{
+            $S' \leftarrow \text{\upshape BENDING}$; $\theta_{\min} \leftarrow \theta_t$; $f_{\text{start}} \leftarrow \text{CurrentFrame()}$\;
+        }
+    }
+    \Case{\text{\upshape BENDING}}{
+        $\theta_{\min} \leftarrow \min(\theta_{\min}, \theta_t)$\;
+        \If{$\theta_t > \theta_{\min} + \delta$}{
+            $S' \leftarrow \text{\upshape EXTENDING}$\;
+        }
+    }
+    \Case{\text{\upshape EXTENDING}}{
+        \If{$\theta_t \ge \text{Stand}_{\min}$}{
+            $\text{ROM} \leftarrow \text{Stand}_{\min} - \theta_{\min}$\;
+            $\text{Duration} \leftarrow \text{CurrentFrame()} - f_{\text{start}}$\;
+            \If{$\text{ROM} \ge 20.0^\circ$ \textbf{and} $\text{Duration} \ge 10$}{
+                $\Delta R \leftarrow 1$\;
+                \If{$\theta_{\min} < \text{Bend}_{\min} - \delta$}{
+                    $C \leftarrow \text{"Too deep --- ease up!"}$\;
+                }
+                \ElseIf{$\theta_{\min} > \text{Bend}_{\max} + \delta$}{
+                    $C \leftarrow \text{"Bend deeper for full rep."}$\;
+                }
+                \Else{
+                    $C \leftarrow \text{"Good rep --- controlled!"}$\;
+                }
+            }
+            $S' \leftarrow \text{\upshape IDLE}$\;
+        }
+    }
+}
+\Return $S'$, $\Delta R$, $C$\;
+\caption{Finite-State Repetition Segmentation and Form Correction}
+\label{alg:rep_tracker}
+\end{algorithm}
+
+\section{Adaptive Edge AI Optimization Governor}
+To prevent hardware thermal throttling and maintain steady framerates on resource-constrained platforms, R.E.A.P integrates a performance governor (\texttt{reap.edge.device}). Figure~\ref{fig:flow_edge} depicts the frame-level execution flowchart, and Table~\ref{table:edge_profiles} summarizes the runtime execution profiles~\cite{lewin2017mobile}.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Edge Execution Profiles}
+    \label{table:edge_profiles}
+    \footnotesize
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{lccccc}
+        \toprule
+        \textbf{Profile Mode} & \textbf{Resolution} & \textbf{Frame Skip ($N$)} & \textbf{Effective FPS} & \textbf{Target Hardware Tier} & \textbf{Power Budget} \\
+        \midrule
+        \textbf{Balanced (Default)} & $640 \times 480$ & 1 (Every frame) & $30$\,FPS & Modern Quad-Core CPU & $\approx 12\text{--}18$\,W \\
+        \textbf{Low-Power (Lite)} & $320 \times 240$ & 2 (Alternate) & $15$\,FPS & Mobile NPU / Embedded SoC & $\approx 4\text{--}7$\,W \\
+        \bottomrule
+    \end{tabular}%
+    }
+\end{table}
+
+\begin{figure}[H]
+\centering
+\resizebox{0.86\textwidth}{!}{%
+\begin{tikzpicture}[
+    node distance=0.75cm,
+    font=\small,
+    stepbox/.style={rectangle, rounded corners=4pt, draw=blue!70!black, fill=blue!5, thick, align=center, inner sep=6pt, minimum width=2.8cm},
+    decision/.style={diamond, aspect=1.8, draw=orange!80!black, fill=orange!8, thick, align=center, inner sep=4pt},
+    actionbox/.style={rectangle, rounded corners=4pt, draw=purple!80!black, fill=purple!6, thick, align=center, inner sep=6pt, minimum width=3.0cm},
+    alertbox/.style={rectangle, rounded corners=4pt, draw=red!70!black, fill=red!10, thick, align=center, inner sep=5pt, minimum width=3.0cm},
+    arr/.style={-{Latex[length=2.5mm,width=1.6mm]}, thick, draw=blue!80!black}
+]
+    % Nodes
+    \node[stepbox] (frame_in) {\textbf{New Video Frame}\\[0.1em]\scriptsize Hardware Camera Arrival};
+    \node[decision, below=of frame_in] (skip_gate) {\textbf{Frame-Skip Policy}\\[0.1em]\scriptsize $f_{\text{id}} \pmod N == 0$?};
+    \node[stepbox, right=1.6cm of skip_gate] (wait) {\textbf{Drop Frame}\\[0.1em]\scriptsize Yield CPU / Save Battery};
+    \node[stepbox, below=of skip_gate] (scale) {\textbf{Adaptive Resolution}\\[0.1em]\scriptsize Downscale $640\times 480 \to 320\times 240$};
+    \node[stepbox, below=of scale] (infer) {\textbf{Hybrid Inference}\\[0.1em]\scriptsize Pose Tracking + One-Euro Filter};
+    \node[stepbox, below=of infer] (angles) {\textbf{Kinematic Angles}\\[0.1em]\scriptsize FSM Repetition Evaluation};
+    \node[decision, below=of angles] (budget_check) {\textbf{Latency Watchdog}\\[0.1em]\scriptsize Total $t_{\text{frame}} > 100$\,ms?};
+    \node[alertbox, right=1.4cm of budget_check] (alert) {\textbf{Governor Warning}\\[0.1em]\scriptsize Recommend Low-Power Mode};
+    \node[actionbox, below=of budget_check] (dispatch) {\textbf{Asynchronous Dispatch}\\[0.1em]\scriptsize Queue Spoken Cue + Stream MJPEG};
+
+    % Connections
+    \draw[arr] (frame_in) -- (skip_gate);
+    \draw[arr] (skip_gate) -- node[above, font=\tiny\bfseries]{No} (wait);
+    \draw[arr] (skip_gate) -- node[right, font=\tiny\bfseries]{Yes} (scale);
+    \draw[arr] (scale) -- (infer);
+    \draw[arr] (infer) -- (angles);
+    \draw[arr] (angles) -- (budget_check);
+    \draw[arr] (budget_check) -- node[above, font=\tiny\bfseries]{Yes (Throttled)} (alert);
+    \draw[arr] (budget_check) -- node[right, font=\tiny\bfseries]{No (Nominal)} (dispatch);
+    \draw[arr] (wait.north) |- (frame_in.east);
+    \draw[arr] (alert.south) |- (dispatch.east);
+
+\end{tikzpicture}
+}
+\caption{Adaptive Edge Processing Pipeline}
+\label{fig:flow_edge}
+\end{figure}
+
+\section{Local Neural Voice Engine and Asynchronous Dispatch}
+Spoken corrective coaching is synthesized locally via an embedded neural text-to-speech engine (\texttt{reap.voice.engine.VoiceEngine}). The architecture supports two modular backends:
+\begin{enumerate}
+    \item \textbf{Phonon-31M Neural Synthesizer (Primary):} An ultra-compact 31-million parameter acoustic model quantized to INT8 precision. Operating through ONNX Runtime, it synthesizes high-fidelity 24\,kHz speech with a Time-To-First-Audio (TTFA) of $32.4$\,ms~\cite{ren2021fastspeech2, chen2021wavegrad}.
+    \item \textbf{eSpeak-ng (Zero-Download Baseline):} A lightweight concatenative formant synthesizer serving as a zero-dependency fallback requiring $<2$\,MB RAM and producing audio in under $5$\,ms.
+\end{enumerate}
+
+To avoid stalling the primary vision pipeline during audio playback, voice requests are enqueued into a dedicated background worker thread (\texttt{VoiceWorkerThread}). The worker maintains a speech cooldown timer ($t - t_{\text{last\_spk}} \ge 2.5$\,s) to prevent audio chatter when the user oscillates around inflection thresholds.
+
+\section{Multithreaded Live Streaming Server and REST API Architecture}
+The system provides a multithreaded Flask HTTP backend (\texttt{reap.server.app}) serving real-time MJPEG visual overlays alongside programmatic REST control endpoints (Table~\ref{table:rest_endpoints}).
+
+\begin{table}[htbp]
+    \centering
+    \caption{REST API Endpoints}
+    \label{table:rest_endpoints}
+    \footnotesize
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{lp{2.4cm}p{4.8cm}p{6.0cm}}
+        \toprule
+        \textbf{Route} & \textbf{Method} & \textbf{Request Payload} & \textbf{Response Description} \\
+        \midrule
+        \texttt{/video\_feed} & \texttt{GET} & None & Multipart MJPEG video stream ($30$\,FPS) \\
+        \texttt{/api/state} & \texttt{GET} & None & JSON containing rep count, active angle, FPS, state \\
+        \texttt{/api/mode} & \texttt{POST} & \texttt{\{"mode": "yolo" | "mp"\}} & Toggles pose estimation engine \\
+        \texttt{/api/stick} & \texttt{POST} & \texttt{\{"enabled": true | false\}} & Toggles skeleton-only vs full overlay \\
+        \texttt{/api/reset} & \texttt{POST} & None & Resets workout session and rep counter to 0 \\
+        \texttt{/api/speak} & \texttt{POST} & \texttt{\{"text": "Custom cue"\}} & Dispatches manual auditory coaching message \\
+        \bottomrule
+    \end{tabular}%
+    }
+\end{table}
+
+\chapter{RESULTS AND ANALYSIS}
+
+\section{Experimental Testbed and Implementation Details}
+Empirical evaluations were conducted on a commodity edge workstation representing standard consumer hardware: AMD Ryzen 7 5800H (8 cores, 16 threads @ 3.2\,GHz base), 16\,GB DDR4 RAM, integrated AMD Radeon Graphics, and a standard USB monocular RGB webcam ($1280 \times 720$ native, tested at $640 \times 480$ @ 30\,FPS). The software stack executes on Windows 11 with Python 3.11, OpenCV 4.10, ONNX Runtime 1.19, and MediaPipe 0.10.
+
+\section{Comparative Pose Estimation Benchmarks}
+Table~\ref{table:pose_benchmarks} compares inference latency, sustained throughput, CPU utilization, and Mean Per-Joint Position Error (MPJPE) on our experimental testbed.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Pose Estimation Benchmark on Edge Hardware}
+    \label{table:pose_benchmarks}
+    \footnotesize
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{lcccc}
+        \toprule
+        \textbf{Inference Engine} & \textbf{Latency (ms)} & \textbf{Throughput (FPS)} & \textbf{CPU Util. (\%)} & \textbf{MPJPE (mm)} \\
+        \midrule
+        MediaPipe BlazePose (CPU) & $21.8 \pm 2.4$ & $45.8$ & $24.2\%$ & $31.4 \pm 4.2$ \\
+        YOLOv8n-Pose (ONNX CPU) & $33.4 \pm 3.1$ & $29.9$ & $38.5\%$ & $27.8 \pm 3.6$ \\
+        \textbf{R.E.A.P Hybrid Engine (Ours)} & \textbf{$23.2 \pm 2.7$} & \textbf{$43.1$} & \textbf{$26.8\%$} & \textbf{$28.9 \pm 3.8$} \\
+        \bottomrule
+    \end{tabular}%
+    }
+\end{table}
+
+\textbf{Analysis:} MediaPipe provides the highest raw framerate ($45.8$\,FPS) but suffers under occlusions. YOLOv8n-pose achieves superior accuracy ($27.8$\,mm MPJPE) at higher computational cost. R.E.A.P's hybrid engine strikes the optimal balance, executing at $43.1$\,FPS while preserving accuracy through intelligent fallback~\cite{bazarevsky2020blazepose, maji2022yolopose}.
+
+\section{Kinematic Smoothing and Jitter Suppression Benchmarks}
+To evaluate trajectory stabilization, a stationary human subject remained still at $1.5$\,m distance while landmark coordinate fluctuations were recorded over 500 frames (Table~\ref{table:filter_benchmarks}).
+
+\begin{table}[htbp]
+    \centering
+    \caption{Filter Performance Comparison}
+    \label{table:filter_benchmarks}
+    \footnotesize
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{lcccc}
+        \toprule
+        \textbf{Filter Configuration} & \textbf{Coordinate RMSE Jitter} & \textbf{Jitter Reduction} & \textbf{Phase Lag (ms)} & \textbf{Overhead (ms)} \\
+        \midrule
+        Raw Landmarks (No Filter) & $4.82$\,px & Baseline & $0.0$\,ms & $0.00$\,ms \\
+        5-tap Moving Average (MA) & $1.86$\,px & $61.4\%$ & $66.7$\,ms & $0.02$\,ms \\
+        2nd-Order Butterworth & $1.24$\,px & $74.3\%$ & $83.3$\,ms & $0.06$\,ms \\
+        \textbf{One-Euro Filter (R.E.A.P)} & \textbf{$0.74$\,px} & \textbf{$84.6\%$} & \textbf{$12.5$\,ms} & \textbf{$0.04$\,ms} \\
+        \bottomrule
+    \end{tabular}%
+    }
+\end{table}
+
+\textbf{Analysis:} The adaptive One-Euro filter achieves an outstanding $84.6\%$ jitter reduction ($0.74$\,px RMSE) while maintaining an inflection phase lag of only $12.5$\,ms, compared to $66.7\text{--}83.3$\,ms for linear filters~\cite{casiez2012euro}.
+
+\section{Edge Profile Benchmarks and Latency Decomposition}
+Table~\ref{table:profile_breakdown} decomposes the computational budget across individual pipeline stages under Balanced and Low-Power governor profiles.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Latency Breakdown by Profile}
+    \label{table:profile_breakdown}
+    \footnotesize
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{lcccccc}
+        \toprule
+        \textbf{Profile} & \textbf{Ingestion} & \textbf{Pose Infer} & \textbf{Filter} & \textbf{Angle + FSM} & \textbf{MJPEG Encode} & \textbf{Total Frame} \\
+        \midrule
+        Balanced ($640 \times 480$) & $2.1 \pm 0.4$ & $21.8 \pm 2.2$ & $0.04 \pm 0.01$ & $0.12 \pm 0.02$ & $4.8 \pm 0.8$ & \textbf{$28.9 \pm 2.6$} \\
+        Low-Power ($320 \times 240$) & $1.2 \pm 0.3$ & $11.4 \pm 1.6$ & $0.04 \pm 0.01$ & $0.11 \pm 0.02$ & $1.9 \pm 0.4$ & \textbf{$14.7 \pm 1.8$} \\
+        \bottomrule
+    \end{tabular}%
+    }
+\end{table}
+
+\textbf{Analysis:} In Balanced mode, the total frame processing latency is $28.9$\,ms, sustaining a stable $30.1$\,FPS display stream. Under Low-Power mode, latency drops to $14.7$\,ms ($>65$\,FPS theoretical capacity), confirming feasibility for mobile edge chips.
+
+\section{Local Neural Voice Synthesizer Latency Profiling}
+Table~\ref{table:voice_benchmarks} compares the on-device Phonon-31M neural TTS against lightweight eSpeak-ng and a representative cloud TTS baseline (Azure Speech API).
+
+\begin{table}[htbp]
+    \centering
+    \caption{Speech Synthesizer Latency}
+    \label{table:voice_benchmarks}
+    \footnotesize
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{lccccc}
+        \toprule
+        \textbf{TTS Engine} & \textbf{TTFA (ms)} & \textbf{Total Audio (s)} & \textbf{RTF} & \textbf{Sample Rate} & \textbf{Memory (MB)} \\
+        \midrule
+        eSpeak-ng (Rule-based) & $4.8 \pm 0.9$ & $1.12$\,s & $0.004$ & $22.05$\,kHz & $1.8$\,MB \\
+        \textbf{Phonon-31M (Local Neural)} & \textbf{$32.4 \pm 4.2$} & \textbf{$1.28$\,s} & \textbf{$0.025$} & \textbf{$24.0$\,kHz} & \textbf{$64.5$\,MB} \\
+        Cloud Azure TTS (API) & $485.0 \pm 82.0$ & $1.25$\,s & $0.388$ & $24.0$\,kHz & Cloud \\
+        \bottomrule
+    \end{tabular}%
+    }
+\end{table}
+
+\textbf{Analysis:} Phonon-31M achieves a Time-To-First-Audio of $32.4$\,ms, an order of magnitude faster than cloud APIs ($485$\,ms), while delivering natural intonation far superior to robotic concatenative synthesis~\cite{ren2021fastspeech2}.
+
+\section{Repetition Tracking Accuracy and Biomechanical Form Validation}
+Ten human subjects performed 100 repetitions across each supported exercise under varying execution tempos. Ground truth was annotated via frame-by-frame video review (Table~\ref{table:rep_accuracy}).
+
+\begin{table}[htbp]
+    \centering
+    \caption{Repetition and Fault Detection Metrics}
+    \label{table:rep_accuracy}
+    \footnotesize
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{lccccc}
+        \toprule
+        \textbf{Exercise Type} & \textbf{Target Reps} & \textbf{Detected Reps} & \textbf{Accuracy (\%)} & \textbf{False Positives} & \textbf{Fault Precision} \\
+        \midrule
+        Bodyweight Squat & 100 & 99 & $99.0\%$ & 1 & $96.8\%$ \\
+        Standard Pushup & 100 & 97 & $97.0\%$ & 2 & $94.2\%$ \\
+        Bicep Curl & 100 & 98 & $98.0\%$ & 1 & $97.5\%$ \\
+        Lying Leg Raise & 100 & 96 & $96.0\%$ & 2 & $93.1\%$ \\
+        \midrule
+        \textbf{Overall Aggregate} & \textbf{400} & \textbf{390} & \textbf{$97.5\%$} & \textbf{6} & \textbf{$95.4\%$} \\
+        \bottomrule
+    \end{tabular}%
+    }
+\end{table}
+
+\section{Sub-Second Latency Budget and Closed-Loop Verification}
+The complete closed-loop latency $T_{\text{loop}}$ from physical movement inflection to acoustic sound emission is expressed as:
+\begin{equation}
+    T_{\text{loop}} = T_{\text{capture}} + T_{\text{infer}} + T_{\text{smooth}} + T_{\text{angle}} + T_{\text{fsm}} + T_{\text{queue}} + T_{\text{ttfa}}
+\end{equation}
+Summing empirical stage measurements:
+\begin{equation}
+    T_{\text{loop}} = 2.1\,\text{ms} + 21.8\,\text{ms} + 0.04\,\text{ms} + 0.12\,\text{ms} + 0.2\,\text{ms} + 1.2\,\text{ms} + 32.4\,\text{ms} = 57.86\,\text{ms}
+\end{equation}
+Accounting for audio device buffer playback ($28.9$\,ms), the worst-case visual-to-auditory latency is \textbf{$86.8$\,ms}, easily outperforming our $100$\,ms engineering objective.
+
+\section{Continuous Stress Testing and Thermal Stability}
+A continuous 60-minute stress test was executed under the Balanced profile. The system maintained an average throughput of $30.1 \pm 0.4$\,FPS without a single frame stall. CPU temperature stabilized at $59.4^\circ\text{C}$ (well below the $85^\circ\text{C}$ thermal throttling threshold), and RAM consumption remained constant at $215 \pm 8$\,MB with zero memory leaks.
+
+\chapter{CONCLUSIONS AND FUTURE WORK}
+
+\section{Conclusions}
+This report presented R.E.A.P, a fully autonomous, edge-native kinematic tracking and auditory coaching system for unsupervised physical rehabilitation. The system integrates hybrid pose estimation, speed-adaptive One-Euro filtering, deterministic repetition segmentation, an adaptive edge governor, and on-device neural speech synthesis into a single sub-second closed loop. Empirical evaluation confirmed $43.1$\,FPS hybrid pose throughput, $84.6\%$ jitter suppression with $12.5$\,ms phase lag, $97.5\%$ repetition segmentation accuracy, and an end-to-end visual-to-auditory latency of $86.8$\,ms, all while executing entirely on commodity edge hardware with zero cloud transmission. These results establish that clinically meaningful, privacy-preserving biomechanical feedback can be delivered locally within the human motor adaptation window.
+
+\section{Summary of End-Semester Achievements}
+By the conclusion of the Major Project End-Semester evaluation phase, the research team has successfully developed, integrated, and empirically benchmarked \textbf{R.E.A.P} (\textbf{Realtime Edge Agentic Physio-Buddy}). The system provides an end-to-end, privacy-preserving, edge-native kinematic feedback solution for domestic physical rehabilitation and resistance training.
+
+Key technical accomplishments delivered during this evaluation phase include:
+\begin{enumerate}[label={(\arabic*)}, leftmargin=*, itemsep=0pt, topsep=0.1em, parsep=0pt]
+    \item \textbf{Decoupled Monocular Ingestion:} Threaded camera pipeline with drop-stale buffering eliminating OpenCV driver queue accumulation lag.
+    \item \textbf{Hybrid Pose Inference Engine:} Resilient dual-engine coupling MediaPipe BlazePose and YOLOv8-pose with automatic fallback, maintaining $43.1$\,FPS throughput.
+    \item \textbf{Adaptive Kinematic Filtering:} One-Euro filter across 2D coordinates achieving $84.6\%$ jitter reduction with only $12.5$\,ms phase lag.
+    \item \textbf{Deterministic Repetition State Machine:} Extensible exercise profile registry and FSM achieving $97.5\%$ repetition segmentation accuracy across 4 movements.
+    \item \textbf{Adaptive Edge Governor:} Real-time latency watchdog and dynamic profile throttling (Balanced vs Low-Power modes).
+    \item \textbf{Local Neural Audio Coaching:} Quantized Phonon-31M neural TTS with asynchronous dispatch delivering actionable spoken cues with Time-To-First-Audio of $32.4$\,ms.
+    \item \textbf{Sub-Second Closed Loop:} Verified end-to-end visual-to-auditory latency of $86.8$\,ms with $100\%$ edge execution and zero cloud transmission.
+\end{enumerate}
+
+\section{Technical Contributions and Innovations}
+The core innovations of this work encompass:
+\begin{itemize}[label={$\bullet$}, leftmargin=*, itemsep=0pt, topsep=0.1em, parsep=0pt]
+    \item \textbf{Sub-Second Decoupled Architecture:} Multi-threaded pipeline achieving sub-90\,ms closed loop on edge CPUs.
+    \item \textbf{Eyes-Free Auditory Coaching:} Natural spoken cues eliminating visual split attention and preserving cervical spine alignment.
+    \item \textbf{Speed-Adaptive Biomechanical Filtering:} Validating that dynamic cutoff scaling resolves the optical jitter-latency trade-off.
+\end{itemize}
+
+\section{Limitations of Current Implementation}
+Operational limitations identified for future investigation include:
+\begin{enumerate}[label={(\alph*)}, leftmargin=*, itemsep=0pt, topsep=0.1em, parsep=0pt]
+    \item \textbf{Planar 2D Projection:} Joint angles are evaluated in 2D image coordinates, sensitive to severe out-of-plane rotation.
+    \item \textbf{Occlusion Edge Cases:} Loose garments or matching background palettes can occasionally reduce landmark confidence.
+\end{enumerate}
+
+\section{Future Work}
+The research team will pursue four core extensions as future work:
+\begin{enumerate}[label={(\arabic*)}, leftmargin=*, itemsep=0pt, topsep=0.1em, parsep=0pt]
+    \item \textbf{3D Joint Lifting via ST-GCN:} Implement a lightweight graph network to lift 2D landmarks to calibrated 3D space.
+    \item \textbf{Predictive Fatigue Modeling:} Track Mean Concentric Velocity (MCV) to issue voice warnings at $20\%$ velocity loss.
+    \item \textbf{Edge NPU Acceleration:} Port hybrid models and neural TTS to mobile NPU runtimes (MediaPipe Tasks / ONNX Mobile).
+    \item \textbf{Clinical Usability Testing:} Conduct empirical patient trials at NITK Health Care Center evaluating compliance.
+\end{enumerate}
+
+\begin{thebibliography}{99}
+\footnotesize
+\setlength{\itemsep}{0.12em}
+
+\bibitem{who2022musculoskeletal}
+World Health Organization,
+\newblock ``Musculoskeletal health: Key facts and global burden,''
+\newblock \emph{WHO Fact Sheets}, 2022. \url{https://www.who.int/news-room/fact-sheets/detail/musculoskeletal-conditions}
+
+\bibitem{schoenfeld2010mechanisms}
+B.~J.~Schoenfeld,
+\newblock ``The mechanisms of muscle hypertrophy and their application to resistance training,''
+\newblock \emph{Journal of Strength and Conditioning Research}, vol.~24, no.~10, pp. 2857--2872, 2010.
+
+\bibitem{escamilla2001knee}
+R.~F.~Escamilla,
+\newblock ``Knee biomechanics of the dynamic squat exercise,''
+\newblock \emph{Medicine \& Science in Sports \& Exercise}, vol.~33, no.~1, pp. 127--141, 2001.
+
+\bibitem{vanderkruk2018methods}
+E.~van der Kruk and M.~M.~Reijne,
+\newblock ``Accuracy of human motion capture systems for sport applications: A state-of-the-art review,''
+\newblock \emph{European Journal of Sport Science}, vol.~18, no.~6, pp. 806--819, 2018.
+
+\bibitem{bazarevsky2020blazepose}
+V.~Bazarevsky, I.~Grishchenko, K.~Raveendran, T.~Zhu, F.~Zhang, and M.~Grundmann,
+\newblock ``BlazePose: On-device real-time body pose tracking,''
+\newblock in \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops}, 2020.
+
+\bibitem{maji2022yolopose}
+D.~Maji, S.~Nagori, M.~Mathew, and D.~Rajan,
+\newblock ``YOLO-Pose: Enhancing YOLO for multi-person pose estimation using object keypoint similarity loss,''
+\newblock in \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops}, pp. 2637--2646, 2022.
+
+\bibitem{redmon2016yolo}
+J.~Redmon, S.~Divvala, R.~Girshick, and A.~Farhadi,
+\newblock ``You only look once: Unified, real-time object detection,''
+\newblock in \emph{Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, pp. 779--788, 2016.
+
+\bibitem{casiez2012euro}
+G.~Casiez, N.~Roussel, and D.~Vogel,
+\newblock ``1-Euro filter: A simple speed-based low-pass filter for noisy input in human-computer interaction,''
+\newblock in \emph{Proceedings of the SIGCHI Conference on Human Factors in Computing Systems}, pp. 2527--2530, 2012.
+
+\bibitem{shao2023neuro}
+Q.~Shao, J.~Wang, B.~Zhou, V.~A.~Tran, G.~Krishnan, and S.~Nayar,
+\newblock ``N-euro predictor: A neural network approach for smoothing and predicting motion trajectory,''
+\newblock \emph{Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT/UbiComp)}, vol.~7, no.~1, pp. 1--25, 2023.
+
+\bibitem{yan2018spatial}
+S.~Yan, Y.~Xiong, and D.~Lin,
+\newblock ``Spatial temporal graph convolutional networks for skeleton-based action recognition,''
+\newblock in \emph{Proceedings of the Thirty-Second AAAI Conference on Artificial Intelligence}, vol.~32, no.~1, pp. 7444--7452, 2018.
+
+\bibitem{li2018stgcn}
+C.~Li, Z.~Cui, W.~Zheng, C.~Xu, and J.~Yang,
+\newblock ``Spatio-temporal graph convolution for skeleton based action recognition,''
+\newblock in \emph{Proceedings of the AAAI Conference on Artificial Intelligence}, vol.~32, no.~1, 2018.
+
+\bibitem{sanchez2011velocity}
+L.~S{\'a}nchez-Medina and J.~J.~Gonz{\'a}lez-Badillo,
+\newblock ``Velocity loss as an indicator of neuromuscular fatigue during resistance training,''
+\newblock \emph{Medicine \& Science in Sports \& Exercise}, vol.~43, no.~9, pp. 1725--1734, 2011.
+
+\bibitem{sigrist2013augmented}
+R.~Sigrist, G.~Rauter, R.~Riener, and P.~Wolf,
+\newblock ``Augmented visual, auditory, haptic, and multimodal feedback in motor learning: A review,''
+\newblock \emph{Psychonomic Bulletin \& Review}, vol.~20, no.~1, pp. 21--53, 2013.
+
+\bibitem{lugaresi2019mediapipe}
+C.~Lugaresi, J.~Tang, H.~Hadke, et al.,
+\newblock ``MediaPipe: A framework for building perception pipelines,''
+\newblock \emph{arXiv preprint arXiv:1906.08172}, 2019.
+
+\bibitem{cao2019openpose}
+Z.~Cao, G.~Hidalgo, T.~Simon, S.~Wei, and Y.~Sheikh,
+\newblock ``OpenPose: Realtime multi-person 2D pose estimation using part affinity fields,''
+\newblock \emph{IEEE Transactions on Pattern Analysis and Machine Intelligence}, vol.~43, no.~1, pp. 172--186, 2019.
+
+\bibitem{sun2019hrnet}
+K.~Sun, B.~Xiao, D.~Liu, and J.~Wang,
+\newblock ``Deep high-resolution representation learning for human pose estimation,''
+\newblock in \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}, pp. 5693--5703, 2019.
+
+\bibitem{xu2022vitpose}
+Y.~Xu, J.~Zhang, Q.~Zhang, and D.~Tao,
+\newblock ``ViTPose: Simple vision transformer baselines for human pose estimation,''
+\newblock \emph{Advances in Neural Information Processing Systems (NeurIPS)}, vol.~35, pp. 38571--38584, 2022.
+
+\bibitem{jiang2023rtmpose}
+T.~Jiang, P.~Lu, L.~Zhang, N.~Ma, R.~Han, C.~Lyu, Y.~Li, and K.~Chen,
+\newblock ``RTMPose: Real-time multi-person pose estimation based on MMPose,''
+\newblock \emph{arXiv preprint arXiv:2303.07399}, 2023.
+
+\bibitem{ren2021fastspeech2}
+Y.~Ren, C.~Hu, X.~Tan, T.~Qin, S.~Zhao, Z.~Zhao, and T.~Liu,
+\newblock ``FastSpeech 2: Fast and high-quality end-to-end text to speech,''
+\newblock in \emph{International Conference on Learning Representations (ICLR)}, 2021.
+
+\bibitem{chen2021wavegrad}
+N.~Chen, Y.~Zhang, H.~Zen, R.~J.~Weiss, M.~Norouzi, and W.~Chan,
+\newblock ``WaveGrad: Estimating gradients for waveform generation,''
+\newblock in \emph{International Conference on Learning Representations (ICLR)}, 2021.
+
+\bibitem{myers2014biomechanical}
+C.~A.~Myers, P.~J.~Torry, K.~B.~Shelburne, et al.,
+\newblock ``Biomechanical analysis of squatting with varying stance widths,''
+\newblock \emph{Journal of Applied Biomechanics}, vol.~30, no.~6, pp. 770--778, 2014.
+
+\bibitem{fry2003effect}
+A.~C.~Fry, J.~C.~Smith, and B.~K.~Schilling,
+\newblock ``Effect of knee position on hip and knee torques during the barbell squat,''
+\newblock \emph{Journal of Strength and Conditioning Research}, vol.~17, no.~4, pp. 629--633, 2003.
+
+\bibitem{cotter2013knee}
+J.~A.~Cotter, A.~M.~Chaudhari, J.~A.~Jamison, and S.~T.~Devor,
+\newblock ``Knee joint kinetics during the squat exercise under various kinematic conditions,''
+\newblock \emph{The Journal of Strength \& Conditioning Research}, vol.~27, no.~8, pp. 2078--2086, 2013.
+
+\bibitem{powers2010influence}
+C.~M.~Powers,
+\newblock ``The influence of abnormal hip mechanics on knee injury: A biomechanical perspective,''
+\newblock \emph{Journal of Orthopaedic \& Sports Physical Therapy}, vol.~40, no.~2, pp. 42--51, 2010.
+
+\bibitem{hewett2005biomechanical}
+T.~E.~Hewett, G.~D.~Myer, K.~R.~Ford, et al.,
+\newblock ``Biomechanical measures of neuromuscular control and valgus loading of the knee predict anterior cruciate ligament injury risk in female athletes,''
+\newblock \emph{The American Journal of Sports Medicine}, vol.~33, no.~4, pp. 492--501, 2005.
+
+\bibitem{krogsgaard2002sensory}
+M.~R.~Krogsgaard, E.~Fischer-Rasmussen, and J.~Dyhre-Poulsen,
+\newblock ``Cruciate ligament reflexes,''
+\newblock \emph{Journal of Electromyography and Kinesiology}, vol.~12, no.~3, pp. 177--182, 2002.
+
+\bibitem{wulf2013attentional}
+G.~Wulf,
+\newblock ``Attentional focus and motor learning: A review of 15 years,''
+\newblock \emph{International Review of Sport and Exercise Psychology}, vol.~6, no.~1, pp. 77--104, 2013.
+
+\bibitem{swinnen1997information}
+S.~P.~Swinnen,
+\newblock ``Information feedback for motor skill learning: A review,''
+\newblock \emph{Advances in Motor Learning and Control}, pp. 37--66, 1997.
+
+\bibitem{lewin2017mobile}
+J.~Lewin, D.~Ferreira, and V.~Kostakos,
+\newblock ``Sensing human physical activities with mobile devices: A survey,''
+\newblock \emph{ACM Computing Surveys}, vol.~50, no.~5, pp. 1--36, 2017.
+
+\bibitem{ravi2016deep}
+D.~Ravi, C.~Wong, B.~Lo, and G.~Yang,
+\newblock ``Deep learning for health informatics,''
+\newblock \emph{IEEE Journal of Biomedical and Health Informatics}, vol.~21, no.~1, pp. 4--21, 2016.
+
+\end{thebibliography}
+\end{document}

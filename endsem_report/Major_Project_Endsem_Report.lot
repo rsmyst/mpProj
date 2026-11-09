@@ -1,0 +1,16 @@
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Comparative Benchmark of Motion Capture Systems}}{8}{table.caption.5}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Keypoint Mapping from MediaPipe BlazePose to COCO}}{15}{table.caption.7}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Exercise Biomechanical Profiles}}{17}{table.caption.8}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Edge Execution Profiles}}{20}{table.caption.10}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces REST API Endpoints}}{23}{table.caption.12}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Pose Estimation Benchmark on Edge Hardware}}{24}{table.caption.13}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Filter Performance Comparison}}{25}{table.caption.14}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Latency Breakdown by Profile}}{25}{table.caption.15}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Speech Synthesizer Latency}}{26}{table.caption.16}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces Repetition and Fault Detection Metrics}}{26}{table.caption.17}%
+\addvspace {10\p@ }

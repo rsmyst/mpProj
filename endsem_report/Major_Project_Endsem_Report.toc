@@ -1,0 +1,51 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{LIST OF FIGURES}{iv}{chapter*.2}%
+\contentsline {chapter}{LIST OF TABLES}{v}{chapter*.3}%
+\contentsline {chapter}{\numberline {1}INTRODUCTION}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Overview and Clinical Context}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Biomechanical Kinematics of Compound Functional Movements}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}The Silent Degradation Paradigm}{2}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Critical Limitations of Current Solutions}{3}{section.1.4}%
+\contentsline {section}{\numberline {1.5}The R.E.A.P Solution Vision: Agentic, Edge-Native, Audio-First}{4}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Summary of Major Project End-Semester Deliverables}{5}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Formal Engineering Objectives}{6}{section.1.7}%
+\contentsline {section}{\numberline {1.8}Organization of the Report}{6}{section.1.8}%
+\contentsline {chapter}{\numberline {2}LITERATURE REVIEW}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Taxonomy of Motion Capture in Physical Therapy}{7}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Commercial Landscape Audit and State of the Art}{7}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Monocular Human Pose Estimation Architectures}{8}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Mathematical Formulations of Temporal Kinematic Smoothing}{9}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Linear Moving Average and Butterworth Filters}{9}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}The One-Euro Adaptive Filter}{9}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}Kinetic Chain Modeling and Action Recognition}{10}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Edge Computing and Auditory Interfaces in Physical Therapy}{11}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Outcome of Literature Review}{11}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Problem Statement}{11}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Research Objectives}{12}{section.2.9}%
+\contentsline {chapter}{\numberline {3}PROPOSED METHODOLOGY}{13}{chapter.3}%
+\contentsline {section}{\numberline {3.1}System Architecture Overview}{13}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Monocular Video Ingestion and Lag-Free Buffering}{14}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Hybrid Pose Estimation Pipeline}{14}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Kinematic Coordinate Smoothing via One-Euro Filter}{16}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Biomechanical Kinematic Angle Computation}{16}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Dynamic Exercise Profile Registry}{17}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Finite-State Repetition State Machine}{17}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Adaptive Edge AI Optimization Governor}{20}{section.3.8}%
+\contentsline {section}{\numberline {3.9}Local Neural Voice Engine and Asynchronous Dispatch}{22}{section.3.9}%
+\contentsline {section}{\numberline {3.10}Multithreaded Live Streaming Server and REST API Architecture}{22}{section.3.10}%
+\contentsline {chapter}{\numberline {4}RESULTS AND ANALYSIS}{24}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Experimental Testbed and Implementation Details}{24}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Comparative Pose Estimation Benchmarks}{24}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Kinematic Smoothing and Jitter Suppression Benchmarks}{25}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Edge Profile Benchmarks and Latency Decomposition}{25}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Local Neural Voice Synthesizer Latency Profiling}{26}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Repetition Tracking Accuracy and Biomechanical Form Validation}{26}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Sub-Second Latency Budget and Closed-Loop Verification}{27}{section.4.7}%
+\contentsline {section}{\numberline {4.8}Continuous Stress Testing and Thermal Stability}{27}{section.4.8}%
+\contentsline {chapter}{\numberline {5}CONCLUSIONS AND FUTURE WORK}{28}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusions}{28}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Summary of End-Semester Achievements}{28}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Technical Contributions and Innovations}{29}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Limitations of Current Implementation}{29}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Future Work}{30}{section.5.5}%
+\contentsline {chapter}{REFERENCES}{31}{chapter*.18}%
