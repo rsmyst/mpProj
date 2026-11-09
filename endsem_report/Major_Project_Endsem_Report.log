@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.11.9)  9 NOV 2026 14:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.11.9)  9 NOV 2026 14:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1010,68 +1010,68 @@ CHAPTER 3.
 [13
 
 ]
-Underfull \hbox (badness 2951) in paragraph at lines 519--519
+Underfull \hbox (badness 2951) in paragraph at lines 517--517
 |[]\OT1/cmr/bx/n/17.28 Monocular Video In-ges-tion and Lag-Free
  []
 
 
-Underfull \hbox (badness 5985) in paragraph at lines 520--521
+Underfull \hbox (badness 5985) in paragraph at lines 518--519
 \OT1/cmr/m/n/12 Standard OpenCV \OT1/cmtt/m/n/12 VideoCapture \OT1/cmr/m/n/12 im-ple-men-ta-tions main-tain in-ter-nal FIFO
  []
 
 
-Underfull \hbox (badness 1478) in paragraph at lines 520--521
+Underfull \hbox (badness 1478) in paragraph at lines 518--519
 \OT1/cmr/m/n/12 than the cam-era in-ter-val, de-layed frames ac-cu-mu-late, caus-ing the dis-played
  []
 
 [14]
-Underfull \hbox (badness 2368) in paragraph at lines 546--547
+Underfull \hbox (badness 2368) in paragraph at lines 544--545
 []\OT1/cmr/m/n/12 To achieve in-ter-op-er-abil-ity be-tween Me-di-aPipe BlazePose land-marks and
  []
 
 [15] [16]
-Underfull \hbox (badness 1490) in paragraph at lines 616--617
+Underfull \hbox (badness 1490) in paragraph at lines 614--615
 \OT1/cmr/m/n/12 R.E.A.P im-ple-ments an ex-ten-si-ble ex-er-cise pro-file reg-istry (\OT1/cmtt/m/n/12 reap.framework.
  []
 
 
-Underfull \hbox (badness 3657) in paragraph at lines 634--634
+Underfull \hbox (badness 3657) in paragraph at lines 632--632
 []|\OT1/cmr/m/it/10 "Lower your chest fully to the
  []
 
 [17] [18]
-Underfull \hbox (badness 1817) in paragraph at lines 757--758
+Underfull \hbox (badness 1817) in paragraph at lines 755--756
 \OT1/cmr/m/n/12 To pre-vent hard-ware ther-mal throt-tling and main-tain steady fram-er-ates on
  []
 
 
-Underfull \hbox (badness 5681) in paragraph at lines 757--758
+Underfull \hbox (badness 5681) in paragraph at lines 755--756
 \OT1/cmr/m/n/12 resource-constrained plat-forms, R.E.A.P in-te-grates a per-for-mance gov-er-nor
  []
 
 [19] [20] [21]
-Underfull \hbox (badness 10000) in paragraph at lines 847--847
+Underfull \hbox (badness 10000) in paragraph at lines 845--845
 []|\OT1/cmr/m/n/10 Multipart MJPEG video stream
  []
 
-LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 847.
-LaTeX Font Info:    No file OMScmtt.fd. on input line 847.
+LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 845.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 845.
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 847.
+(Font)              for symbol `textbraceleft' on input line 845.
 
 [22] [23]
 CHAPTER 4.
 
-Underfull \hbox (badness 1354) in paragraph at lines 852--852
+Underfull \hbox (badness 1354) in paragraph at lines 850--850
 |[]\OT1/cmr/bx/n/17.28 Experimental Testbed and Im-ple-men-ta-tion
  []
 
 [24
 
 ] [25]
-Underfull \hbox (badness 1147) in paragraph at lines 947--947
+Underfull \hbox (badness 1147) in paragraph at lines 945--945
 |[]\OT1/cmr/bx/n/17.28 Repetition Track-ing Ac-cu-racy and Biome-
  []
 
@@ -1080,7 +1080,7 @@ CHAPTER 5.
 [28
 
 ] [29] [30]
-Underfull \hbox (badness 2521) in paragraph at lines 1033--1036
+Underfull \hbox (badness 2521) in paragraph at lines 1031--1034
 []\OT1/cmr/m/n/10 World Health Or-ga-ni-za-tion,  ``Mus-cu-loskele-tal health: Key facts and global bur-
  []
 
@@ -1107,10 +1107,10 @@ Here is how much of TeX's memory you used:
  36 hyphenation exceptions out of 8191
  92i,25n,94p,1488b,1065s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/Users/shish/AppData/Roaming/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk><c:/Users/shish/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Users/shish/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Users/shish/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb><c:/Users/shish/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/Users/shish/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/Users/shish/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/Users/shish/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/shish/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/Users/shish/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/Users/shish/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/Users/shish/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/Users/shish/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/shish/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/shish/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/Users/shish/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/Users/shish/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Users/shish/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/Users/shish/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/shish/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/Users/shish/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/Users/shish/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/Users/shish/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/Users/shish/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/Users/shish/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb><c:/Users/shish/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb><c:/Users/shish/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/Users/shish/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/Users/shish/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Major_Project_Endsem_Report.pdf (42 pages, 540942 bytes).
+Output written on Major_Project_Endsem_Report.pdf (42 pages, 540469 bytes).
 PDF statistics:
- 903 PDF objects out of 1000 (max. 8388607)
- 791 compressed objects within 8 object streams
+ 899 PDF objects out of 1000 (max. 8388607)
+ 787 compressed objects within 8 object streams
  255 named destinations out of 1000 (max. 500000)
  418 words of extra memory for PDF output out of 10000 (max. 10000000)
 
